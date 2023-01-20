@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+</head>
+<body>
+  <header>
+    <section class="header">
+      <h1 class="title"><a href="home.html">Jeu d'Art</a></h1>
+      <nav class="header_nav">
+        <div class="header_text-links">
+          <h5 class="header_link"><a href="./products.html">Shop</a></h5>
+          <h5 class="header_link"><a>Blog</a></h5>
+          <h5 class="header_link"><a>Our Story</a></h5>
+        </div>
+        <div class="header_image-links">
+          <a class="header_icon" style="background-image: url('./assets/Icon color.svg')" onclick="document.querySelector('.filter_search').focus();"></a>
+          <a class="header_icon" style="background-image: url('./assets/shopping-cart 1.svg')"></a>
+          <a class="header_icon" style="background-image: url('./assets/icon color-1.svg')"></a>
+        </div>
+      </nav>
+    </section>
+    <section class="header_cart-notification">
+      <div class="header_cart-notification_img" style="background-image: url('./assets/add.svg');"></div>
+      <p>The item added to your Shopping bag.</p>
+      <p class="header_cart-notification_counter">Items in the cart: 0</p>
+      <button class="header_cart-notification_button">VIEW CART</button>
+    </section>
+  </header>
+  <main>
+    <h1 class="products-title h1">Shop The Latest</h1>
+    <div class="products-wrapper">
+      <section class="filter">
+        <form>
+          <div class="search">
+            <input type="search" class="filter_search" placeholder="Search..." autofocus>
+            <button class="filter_search_button" type="button" style="background-image: url('./assets/close.svg');"></button>
+          </div>
+          <select list="shop-by" class="filter_shop-by" placeholder="Shop By">
+            <option>Shop By</option>
+            <option value="Alphabetic: Ascending">Alphabetic: Ascending</option>
+            <option value="Alphabetic: Descending">Alphabetic: Descending</option>
+            <option value="Year: Ascending">Year: Ascending</option>
+            <option value="Year: Descending">Year: Descending</option>
+          </select>
+          <div class="filter_sort-by">
+            <div class="filter_sort-by_wrapper">
+              <div class="filter_sort-by_color">
+                <h5 class="h5">Color:</h5>
+                  <label class="checkbox_label" for="black">
+                  <input class="checkbox" type="checkbox" id="black" value="color">Black</label>
+                  <label class="checkbox_label" for="blue">
+                  <input class="checkbox" type="checkbox" id="blue" value="color">Blue</label>
+                  <label class="checkbox_label" for="green">
+                  <input class="checkbox" type="checkbox" id="green" value="color">Green</label>
+                  <label class="checkbox_label" for="metal">
+                  <input class="checkbox" type="checkbox" id="metal" value="color">Metal</label>
+                  <label class="checkbox_label" for="red">
+                  <input class="checkbox" type="checkbox" id="red" value="color">Red</label>
+                  <label class="checkbox_label" for="yellow">
+                  <input class="checkbox" type="checkbox" id="yellow" value="color">Yellow</label>
+                  <label class="checkbox_label" for="white">
+                  <input class="checkbox" type="checkbox" id="white" value="color">White</label>
+              </div>
+              <div class="filter_sort-by_color">
+                <h5 class="h5">Type:</h5>
+                <label class="checkbox_label" for="chair">
+                <input class="checkbox" type="checkbox" id="chair" value="type">Chair</label>
+                <label class="checkbox_label" for="armchair">
+                <input class="checkbox" type="checkbox" id="armchair" value="type">Armchair</label>
+                <label class="checkbox_label" for="lamp">
+                <input class="checkbox" type="checkbox" id="lamp" value="type">Lamp</label>
+                <label class="checkbox_label" for="composition">
+                <input class="checkbox" type="checkbox" id="composition" value="type">Composition</label>
+                <label class="checkbox_label" for="other">
+                <input class="checkbox" type="checkbox" id="other" value="type">Other</label>
+              </div>
+              <div class="filter_sort-by_color">
+                <h5 class="h5">Producer:</h5>
+                <label class="checkbox_label" for="ARTELUCE">
+                <input class="checkbox" type="checkbox" id="ARTELUCE" value="producer">ARTELUCE</label>
+                <label class="checkbox_label" for="CASTELLI">
+                <input class="checkbox" type="checkbox" id="CASTELLI" value="producer">CASTELLI</label>
+                <label class="checkbox_label" for="DANSK">
+                <input class="checkbox" type="checkbox" id="DANSK" value="producer">DANSK</label>
+                <label class="checkbox_label" for="FRITZ HANSEN">
+                <input class="checkbox" type="checkbox" id="FRITZ HANSEN" value="producer">FRITZ HANSEN</label>
+                <label class="checkbox_label" for="GILAC">
+                <input class="checkbox" type="checkbox" id="GILAC" value="producer">GILAC</label>
+                <label class="checkbox_label" for="HOLMEGAARD">
+                <input class="checkbox" type="checkbox" id="HOLMEGAARD" value="producer">HOLMEGAARD</label>
+                <label class="checkbox_label" for="KARTELL">
+                <input class="checkbox" type="checkbox" id="KARTELL" value="producer">KARTELL</label>
+                <label class="checkbox_label" for="KNOLL">
+                <input class="checkbox" type="checkbox" id="KNOLL" value="producer">KNOLL</label>
+                <label class="checkbox_label" for="LIGNE ROSET">
+                <input class="checkbox" type="checkbox" id="LIGNE ROSET" value="producer">LIGNE ROSET</label>
+                <label class="checkbox_label" for="OXAR">
+                <input class="checkbox" type="checkbox" id="OXAR" value="producer">OXAR</label>
+                <label class="checkbox_label" for="TECNO">
+                <input class="checkbox" type="checkbox" id="TECNO" value="producer">TECNO</label>
+                <label class="checkbox_label" for="VITRA">
+                <input class="checkbox" type="checkbox" id="VITRA" value="producer">VITRA</label>
+              </div>
+        </div>
+      </div>
+      <div class="filter_range">
+        <div class="filter_range_wrapper">
+          <p>Price</p>
+          <div class="container">
+            <div class="slider">
+              <div class="track"></div>
+            </div>
+            <div class="thumb t0"></div>
+            <div class="thumb t1"></div>
+          </div>
+        </div>
+        <p class="price-range">0€ - 8560€</p>
+        
+        <div class="filter_range_wrapper">
+          <p>Year</p>
+          <div class="container1">
+            <div class="slider1">
+              <div class="track1"></div>
+            </div>
+            <div class="thumb1 t0"></div>
+            <div class="thumb1 t1"></div>
+          </div>
+        </div>
+        <p class="year-range price-range">1950 - 1990</p>
+      </div>
+          <div class="filter_switches">
+            <p>Popular only</p>
+            <label class="switch">
+              <input type="checkbox" class="filter_switch" id="switch">
+              <span class="slider-click"></span>
+            </label>
+          </div>
+          <button class="filter_reset">Reset</button>
+          </form>
+      </section>
+      <section class="products_list">
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="footer_top">
+      <h5 class="footer_link h5">CONTACT</h5>
+      <h5 class="footer_link h5">TERMS OF SERVICES</h5>
+      <h5 class="footer_link h5">SHIPPING AND RETURNS</h5>
+      <div class="footer_email">
+        <h5 class="footer_link h5">Give an email, get the newsletter.</h5>
+        <div class="footer_icon-arrow footer_icon" style="background-image: url('./assets/arrow.svg')"></div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <h5 class="h5">© 2022 Jeu d'Art. <a class="footer_link">Terms of use</a> and <a class="footer_link">privacy policy.</a></h5>
+      <div class="footer_icons">
+        <a class="footer_icon" style="background-image: url('./assets/github.svg')"></a>
+        <a class="rs-icon" style="background-image: url('./assets/rs_school_js.svg')"></a>
+        <a class="footer_icon" style="background-image: url('./assets/twitter.svg')"></a>
+        <a class="footer_icon" style="background-image: url('./assets/facebook.svg')"></a>
+        <a class="footer_icon" style="background-image: url('./assets/inst.svg')"></a>
+        <a class="footer_icon" style="background-image: url('./assets/twitter-1.svg')"></a>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

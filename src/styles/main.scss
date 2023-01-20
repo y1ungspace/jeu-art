@@ -1,0 +1,31 @@
+@import 'pages/home';
+@import 'pages/products';
+
+@import 'components/button';
+@import 'components/headings';
+@import 'components/product';
+@import 'components/range-slider';
+
+@import 'abstracts/variables';
+
+@import 'base/reset';
+
+@import 'layouts/header';
+@import 'layouts/footer';
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-family: 'DM Sans', sans-serif;
+}
+
+a{
+  all: unset;
+}
+

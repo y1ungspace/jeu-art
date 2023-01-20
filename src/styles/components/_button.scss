@@ -1,0 +1,57 @@
+.home_button {
+  position: relative;
+  top: 368px;
+  left: 39px;
+  height: 53px;
+  width: 193px;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 6px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color:#FFFFFF;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    background: #FFFFFF;
+    color: #000;
+    mix-blend-mode: screen;
+  }
+  &:active {
+    background: #FFFFFF;
+    color: #000;
+    mix-blend-mode: screen;
+  }
+}
+
+.product_window_button {
+  width: 360px;
+  height: 53px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 4px; 
+  transition: 0.3s;
+  margin-bottom: 82px;
+  align-self: flex-end;
+
+  &:hover {
+    background: #000000;
+    color: #FFFFFF;
+  }
+}
+
+.product_window_button_focus {
+  width: 360px;
+  height: 53px;
+  background: #000000;
+  border: 1px solid #000000;
+  color: #FFFFFF;
+  border-radius: 4px; 
+  transition: 0.3s;
+  margin-bottom: 82px;
+  align-self: flex-end;
+}
