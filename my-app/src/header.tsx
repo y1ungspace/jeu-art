@@ -1,28 +1,32 @@
-import React from 'react';
-import { render } from 'react-dom';
-import ReactDOM from 'react-dom/client';
-
 import cartIcon from './assets/icons/shopping-cart 1.svg';
 import personIcon from './assets/icons/Icon color-1.svg';
 import lupeIcon from './assets/icons/Icon color.svg';
+import { Link } from 'react-router-dom';
 
-export function Header() {
+export function Header(props: {isBottomLineOn: boolean}) {
+  const isBottomLineOn = props.isBottomLineOn
+  let bottomLine
+  if (isBottomLineOn) {
+    bottomLine = <div className='header_bottom-line'></div>
+  }
   return ( 
-    <section className="home_header header">
-      <h1 className="title"><a href="home.html">Jeu d'Art</a></h1>
-      <nav className="header_nav">
-        <div className="header_text-links">
-          <h5 className="header_link"><a href="./products.html">Shop</a></h5>
-          <h5 className="header_link"><a>Blog</a></h5>
-          <h5 className="header_link"><a>Our Story</a></h5>
-        </div>
-        {/* <img src={cartIcon} alt="Logo" /> */}
-        <div className="header_image-links">
-          <img className="header_icon" src={lupeIcon} alt="Logo" onClick = {() => (document.querySelector('.filter_search') as HTMLInputElement).focus()} />
-          <img className="header_icon" src={cartIcon} alt="Logo" />
-          <img className="header_icon" src={personIcon} alt="Logo" />
-        </div>
-      </nav>
-    </section>
+    <header>
+      <section className="home_header header">
+        <h1 className="title"><Link to="/home">Jeu d'Art</Link></h1>
+        <nav className="header_nav">
+          <div className="header_text-links">
+            <h5 className="header_link"><Link to="products">Shop</Link></h5>
+            <h5 className="header_link"><Link to="/products">Blog</Link></h5>
+            <h5 className="header_link"><Link to="/products">Our Story</Link></h5>
+          </div>
+          <div className="header_image-links">
+            <img className="header_icon" src={lupeIcon} alt="Logo" onClick = {() => (document.querySelector('.filter_search') as HTMLInputElement).focus()} />
+            <img className="header_icon" src={cartIcon} alt="Logo" />
+            <img className="header_icon" src={personIcon} alt="Logo" />
+          </div>
+        </nav>
+      </section>
+      {bottomLine}
+    </header>
   )
 }
