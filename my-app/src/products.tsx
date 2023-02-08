@@ -1,19 +1,17 @@
 import { Header } from "./header";
 import closeIcon from './assets/icons/close.svg';
 import { ProductList } from "./loader";
-import { searchFilter } from "./search";
 import { useEffect, useState } from "react";
-import { products } from "./products-list";
+import { Footer } from "./footer";
 
 export function Products() {
 
-  const [productsList, setList] = useState("");
   const [isLoaded, setStatus] = useState(false)
 
   useEffect(() => {setStatus(true)});
 
   return(
-    <div>
+    <>
     <Header isBottomLineOn={true}/>
     <main>
       <h1 className="products-title h1">Shop The Latest</h1><div className="products-wrapper">
@@ -130,7 +128,8 @@ export function Products() {
         {isLoaded ? <ProductList /> : <p>Loading...</p>}
       </section>
       </div>
+      <Footer />
     </main>
-    </div>
+    </>
   )
 }
