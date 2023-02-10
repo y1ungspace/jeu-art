@@ -3,19 +3,43 @@ import closeIcon from './assets/icons/close.svg';
 import { ProductList } from "./loader";
 import { useEffect, useState } from "react";
 import { Footer } from "./footer";
+import { TPannel, SearchPannelType } from "./interfaces";
+import { products } from "./products-list";
 
-export function Products() {
+function Pannel(props: TPannel) {
+  const productsArr = products;
+  let typeCheck: string = props.pannelType;
+  const arr: string[] = []
+  productsArr.forEach(product => {
+    console.log(Object.keys(product))
+    if (!arr.includes(`${product[typeCheck as keyof typeof product]}`) && product[typeCheck as keyof typeof product] !== '') {
+      arr.push(`${product[typeCheck as keyof typeof product]}`);
+    }
+  })
+  const checkboxes = arr.map(name => 
+    <Checkbox name={name} />
+  )
+  return (
+    <div className="filter_sort-by_color">
+     <h5 className="h5">{typeCheck.slice(0, 1).toUpperCase() + typeCheck.slice(1)}:</h5>
+     {checkboxes}
+  </div>
+  )
+} 
 
-  const [isLoaded, setStatus] = useState(false)
+function Checkbox(props: {name: string}) {
+  const nameBig = props.name.slice(0, 1).toUpperCase() + props.name.slice(1)
+  return (
+    <label className="checkbox_label" htmlFor={props.name}>
+    <input className="checkbox" type="checkbox" id={props.name} value={props.name}></input>
+    {nameBig}</label>
+  )
+}
 
-  useEffect(() => {setStatus(true)});
 
+function SearchPannel(props: SearchPannelType) {
   return(
-    <>
-    <Header isBottomLineOn={true}/>
-    <main>
-      <h1 className="products-title h1">Shop The Latest</h1><div className="products-wrapper">
-      <section className="filter">
+    <section className="filter">
         <form>
           <div className="search">
             <input type="search" className="filter_search" placeholder="Search..." autoFocus></input>
@@ -30,63 +54,9 @@ export function Products() {
           </select>
           <div className="filter_sort-by">
             <div className="filter_sort-by_wrapper">
-              <div className="filter_sort-by_color">
-                <h5 className="h5">Color:</h5>
-                <label className="checkbox_label" htmlFor="black">
-                  <input className="checkbox" type="checkbox" id="black" value="color"></input>Black</label>
-                <label className="checkbox_label" htmlFor="blue">
-                  <input className="checkbox" type="checkbox" id="blue" value="color"></input>Blue</label>
-                <label className="checkbox_label" htmlFor="green">
-                  <input className="checkbox" type="checkbox" id="green" value="color"></input>Green</label>
-                <label className="checkbox_label" htmlFor="metal">
-                  <input className="checkbox" type="checkbox" id="metal" value="color"></input>Metal</label>
-                <label className="checkbox_label" htmlFor="red">
-                  <input className="checkbox" type="checkbox" id="red" value="color"></input>Red</label>
-                <label className="checkbox_label" htmlFor="yellow">
-                  <input className="checkbox" type="checkbox" id="yellow" value="color"></input>Yellow</label>
-                <label className="checkbox_label" htmlFor="white">
-                  <input className="checkbox" type="checkbox" id="white" value="color"></input>White</label>
-              </div>
-              <div className="filter_sort-by_color">
-                <h5 className="h5">Type:</h5>
-                <label className="checkbox_label" htmlFor="chair">
-                  <input className="checkbox" type="checkbox" id="chair" value="type"></input>Chair</label>
-                <label className="checkbox_label" htmlFor="armchair">
-                  <input className="checkbox" type="checkbox" id="armchair" value="type"></input>Armchair</label>
-                <label className="checkbox_label" htmlFor="lamp">
-                  <input className="checkbox" type="checkbox" id="lamp" value="type"></input>Lamp</label>
-                <label className="checkbox_label" htmlFor="composition">
-                  <input className="checkbox" type="checkbox" id="composition" value="type"></input>Composition</label>
-                <label className="checkbox_label" htmlFor="other">
-                  <input className="checkbox" type="checkbox" id="other" value="type"></input>Other</label>
-              </div>
-              <div className="filter_sort-by_color">
-                <h5 className="h5">Producer:</h5>
-                <label className="checkbox_label" htmlFor="ARTELUCE">
-                  <input className="checkbox" type="checkbox" id="ARTELUCE" value="producer"></input>ARTELUCE</label>
-                <label className="checkbox_label" htmlFor="CASTELLI">
-                  <input className="checkbox" type="checkbox" id="CASTELLI" value="producer"></input>CASTELLI</label>
-                <label className="checkbox_label" htmlFor="DANSK">
-                  <input className="checkbox" type="checkbox" id="DANSK" value="producer"></input>DANSK</label>
-                <label className="checkbox_label" htmlFor="FRITZ HANSEN">
-                  <input className="checkbox" type="checkbox" id="FRITZ HANSEN" value="producer"></input>FRITZ HANSEN</label>
-                <label className="checkbox_label" htmlFor="GILAC">
-                  <input className="checkbox" type="checkbox" id="GILAC" value="producer"></input>GILAC</label>
-                <label className="checkbox_label" htmlFor="HOLMEGAARD">
-                  <input className="checkbox" type="checkbox" id="HOLMEGAARD" value="producer"></input>HOLMEGAARD</label>
-                <label className="checkbox_label" htmlFor="KARTELL">
-                  <input className="checkbox" type="checkbox" id="KARTELL" value="producer"></input>KARTELL</label>
-                <label className="checkbox_label" htmlFor="KNOLL">
-                  <input className="checkbox" type="checkbox" id="KNOLL" value="producer"></input>KNOLL</label>
-                <label className="checkbox_label" htmlFor="LIGNE ROSET">
-                  <input className="checkbox" type="checkbox" id="LIGNE ROSET" value="producer"></input>LIGNE ROSET</label>
-                <label className="checkbox_label" htmlFor="OXAR">
-                  <input className="checkbox" type="checkbox" id="OXAR" value="producer"></input>OXAR</label>
-                <label className="checkbox_label" htmlFor="TECNO">
-                  <input className="checkbox" type="checkbox" id="TECNO" value="producer"></input>TECNO</label>
-                <label className="checkbox_label" htmlFor="VITRA">
-                  <input className="checkbox" type="checkbox" id="VITRA" value="producer"></input>VITRA</label>
-              </div>
+              <Pannel pannelType="color"/>
+              <Pannel pannelType="type"/>
+              <Pannel pannelType="producer"/>
             </div>
           </div>
           {/* <div className="filter_range">
@@ -124,6 +94,21 @@ export function Products() {
           <button className="filter_reset">Reset</button>
         </form>
       </section>
+  )
+}
+
+export function Products() {
+
+  const [isLoaded, setStatus] = useState(false)
+
+  useEffect(() => {setStatus(true)}, []);
+
+  return(
+    <>
+    <Header isBottomLineOn={true}/>
+    <main>
+      <h1 className="products-title h1">Shop The Latest</h1><div className="products-wrapper">
+      <SearchPannel arr={products}/>
       <section className="products_list"> 
         {isLoaded ? <ProductList /> : <p>Loading...</p>}
       </section>

@@ -38,7 +38,6 @@ export function ProductList() {
 }
 
 function Card(props: Template) {
-  console.log(props.name)
   return(
     <div className="product-card">
       <div className="product-card_img" style={{backgroundImage: `url(${props.image})`}}>

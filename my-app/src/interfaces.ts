@@ -1,3 +1,4 @@
+
 export interface Template {
   name: string;
   amount?: number;
@@ -17,11 +18,19 @@ export type Product = {
   amount: number;
   year: number;
   cost: string;
-  color?: string;
+  color: string;
   producer?: string;
   image: string;
   designer: string;
   type: string;
   isPopular?: boolean;
   isInCart: boolean;
+}
+
+export type SearchPannelType = {
+  arr: Product[]
+}
+
+export type TPannel = {
+  pannelType: keyof Product
 }
