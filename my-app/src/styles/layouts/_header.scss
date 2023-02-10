@@ -8,8 +8,6 @@ header {
 
 .header {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
   display: flex;
   width: 1248px;
   margin: 0px auto 0px auto;
@@ -24,8 +22,10 @@ header {
   }
 }
 
-.home_header {
-  border-bottom: none;
+.header_wrapper {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .header_nav {
@@ -112,6 +112,5 @@ header {
   width: 1248px;
   margin: 0 auto;
   padding-top: 68px;
-  border-top: 1px solid #D8D8D8;
-  z-index: 20;
+  z-index: -20;
 }

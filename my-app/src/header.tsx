@@ -5,13 +5,16 @@ import { Link } from 'react-router-dom';
 
 export function Header(props: {isBottomLineOn: boolean}) {
   const isBottomLineOn = props.isBottomLineOn
-  let bottomLine
+  let bottomLine;
+  let styleAddition = {borderBottom: "0px"};
   if (isBottomLineOn) {
     bottomLine = <div className='header_bottom-line'></div>
+    styleAddition = {borderBottom: "1px solid #D8D8D8"};
   }
   return ( 
-    <header>
-      <section className="home_header header">
+    <>
+    <header className="header_wrapper">
+      <section className="header" style={styleAddition}>
         <h1 className="title"><Link to="/home">Jeu d'Art</Link></h1>
         <nav className="header_nav">
           <div className="header_text-links">
@@ -26,7 +29,8 @@ export function Header(props: {isBottomLineOn: boolean}) {
           </div>
         </nav>
       </section>
-      {bottomLine}
     </header>
+    {bottomLine}
+    </>
   )
 }
