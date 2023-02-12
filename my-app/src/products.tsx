@@ -3,15 +3,15 @@ import closeIcon from './assets/icons/close.svg';
 import { ProductList } from "./loader";
 import { useEffect, useState } from "react";
 import { Footer } from "./footer";
-import { TPannel, SearchPannelType } from "./interfaces";
+import { TPannel, SearchPannelType, Product } from "./interfaces";
 import { products } from "./products-list";
+import { SearchInput, searchQuery } from "./search";
 
 function Pannel(props: TPannel) {
   const productsArr = products;
   let typeCheck: string = props.pannelType;
   const arr: string[] = []
   productsArr.forEach(product => {
-    console.log(Object.keys(product))
     if (!arr.includes(`${product[typeCheck as keyof typeof product]}`) && product[typeCheck as keyof typeof product] !== '') {
       arr.push(`${product[typeCheck as keyof typeof product]}`);
     }
@@ -41,10 +41,7 @@ function SearchPannel(props: SearchPannelType) {
   return(
     <section className="filter">
         <form>
-          <div className="search">
-            <input type="search" className="filter_search" placeholder="Search..." autoFocus></input>
-            <button className="filter_search_button" type="button" style={{ backgroundImage: `url(${ closeIcon })` }}></button>
-          </div>
+          <SearchInput />
           <select name="shop-by" className="filter_shop-by" placeholder="Shop By">
             <option>Shop By</option>
             <option value="Alphabetic: Ascending">Alphabetic: Ascending</option>
@@ -99,9 +96,25 @@ function SearchPannel(props: SearchPannelType) {
 
 export function Products() {
 
+  const [arrOfProduct, setProducts] = useState<Product[]>(products)
   const [isLoaded, setStatus] = useState(false)
 
   useEffect(() => {setStatus(true)}, []);
+
+  document.addEventListener('inputUpdated', () => {
+    const arr = targetProducts()
+    setProducts(arr);
+  })
+
+  function targetProducts() {
+    const newArr: Product[] = [];
+    products.map(product => {
+      if (product.name.toLowerCase().includes(searchQuery.search)) {
+        newArr.push(product)
+      }
+    })
+    return newArr;
+  }
 
   return(
     <>
@@ -110,11 +123,15 @@ export function Products() {
       <h1 className="products-title h1">Shop The Latest</h1><div className="products-wrapper">
       <SearchPannel arr={products}/>
       <section className="products_list"> 
-        {isLoaded ? <ProductList /> : <p>Loading...</p>}
+        {isLoaded ? <ProductList arr={arrOfProduct}/> : <p>Loading...</p>}
       </section>
       </div>
       <Footer />
     </main>
     </>
   )
+}
+
+function reloadCards(): any {
+  throw new Error("Function not implemented.");
 }

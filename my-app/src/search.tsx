@@ -1,40 +1,83 @@
-let products = JSON.parse(localStorage.products);
+import { useState } from 'react';
+import closeIcon from './assets/icons/close.svg';
+import { products } from './products-list';
+import { Product } from './interfaces';
+import { ProductList } from './loader';
 
-export function searchFilter() { 
-  const arr = [];
-  shopBy();
-  const result = sortBy();
-  for (let i = 0; i < result.length; i++) {
-    if (result[i][0].toLocaleLowerCase().includes(`${(document.querySelector(".filter_search"
-    ) as HTMLInputElement).value.toLowerCase()}`))   {
-      arr.push(result[i]);
-    }
-  }
-  return products
+// let products = JSON.parse(localStorage.products);
+
+export let searchQuery = {
+  search: ""
 }
 
-function shopBy() {
-  let value = (document.querySelector(".filter_shop-by") as HTMLInputElement).value;
+export function SearchInput() {
+  const [value, setValue] = useState('');
 
-  if (localStorage.getItem("shopBy") !== null) {
-    value = JSON.parse(localStorage.shopBy);
+  function handleUpdate(input: React.ChangeEvent<HTMLInputElement>) {
+    setValue(input.target.value);
+    searchQuery.search = input.target.value;
+    reloadEvent('inputUpdated')
   }
 
-  if ((document.querySelector(".filter_shop-by") as HTMLInputElement).value !== 'Shop By') {
-    value = (document.querySelector(".filter_shop-by") as HTMLInputElement).value;
-  }
-
-  switch (value) {
-    case 'Alphabetic: Ascending': products.sort((a: string[], b: string[]) => a[0].localeCompare(b[0]));
-      break;
-    case 'Alphabetic: Descending': products.sort((b: string[], a: string[]) => a[0].localeCompare(b[0]));
-      break;
-    case 'Year: Ascending': products.sort((a: number[], b: number[]) => a[2] - b[2]);
-      break;
-    case 'Year: Descending': products.sort((b: number[], a: number[]) => a[2] - b[2]);
-  }
-  localStorage.shopBy = JSON.stringify(value);
+ return(
+  <div className="search">
+  <input type="search" className="filter_search" value={value} placeholder="Search..." autoFocus onChange={(e) => handleUpdate(e)}></input>
+  <button className="filter_search_button" type="button" style={{ backgroundImage: `url(${ closeIcon })` }}></button>
+  </div>
+ )
 }
+
+function reloadEvent(eventName: string) {
+  const event = new Event(eventName);
+  document.dispatchEvent(event);
+}
+
+
+
+// function searchPannelHandler(result: string) {
+//   const newArrOfProducts: Product[] = [];  
+//   products.map(product => {
+//     product.name.toLowerCase().includes(result.toLocaleLowerCase()) ? 
+//     newArrOfProducts.push(product) :
+//     void(0)
+//   })
+//   console.log(newArrOfProducts)
+// }
+// export function searchFilter() { 
+//   const arr = [];
+//   shopBy();
+//   const result = sortBy();
+//   for (let i = 0; i < result.length; i++) {
+//     if (result[i][0].toLocaleLowerCase().includes(`${(document.querySelector(".filter_search"
+//     ) as HTMLInputElement).value.toLowerCase()}`))   {
+//       arr.push(result[i]);
+//     }
+//   }
+//   return products
+// }
+
+// function shopBy() {
+//   let value = (document.querySelector(".filter_shop-by") as HTMLInputElement).value;
+
+//   if (localStorage.getItem("shopBy") !== null) {
+//     value = JSON.parse(localStorage.shopBy);
+//   }
+
+//   if ((document.querySelector(".filter_shop-by") as HTMLInputElement).value !== 'Shop By') {
+//     value = (document.querySelector(".filter_shop-by") as HTMLInputElement).value;
+//   }
+
+//   switch (value) {
+//     case 'Alphabetic: Ascending': products.sort((a: string[], b: string[]) => a[0].localeCompare(b[0]));
+//       break;
+//     case 'Alphabetic: Descending': products.sort((b: string[], a: string[]) => a[0].localeCompare(b[0]));
+//       break;
+//     case 'Year: Ascending': products.sort((a: number[], b: number[]) => a[2] - b[2]);
+//       break;
+//     case 'Year: Descending': products.sort((b: number[], a: number[]) => a[2] - b[2]);
+//   }
+//   localStorage.shopBy = JSON.stringify(value);
+// }
 
 // const inputsRy = {
 //   sliderWidth: 200,
@@ -226,36 +269,36 @@ function shopBy() {
 
 // }, false);
 
-function sortBy(): [string, number, number, string, string, string, string, string, string, boolean, boolean][] {
-  const arr: [string, number, number, string, string, string, string, string, string, boolean, boolean][] = [];
-  const arr1: [string, number, number, string, string, string, string, string, string, boolean, boolean][] = [];
-  const colorConditions: string[] = [];
-  const producerConditions: string[] = [];
-  const typeConditions: string[] = [];
-  const inputsChecked = document.querySelectorAll("input")
-  const saveChecked: string[] = [];
-  inputsChecked.forEach(e => {
-    if (e.type === "checkbox" && e.checked) {
-      saveChecked.push(e.id)
-      console.log(inputsChecked)
-      localStorage.saveChecked = JSON.stringify(saveChecked);
-      switch (e.value) {
-        case 'color': colorConditions.push(e.id);
-        break;
-        case 'producer': producerConditions.push(e.id);
-        break;
-        case 'type': typeConditions.push(e.id);
-      }
-    }
-  });
+// function sortBy(): [string, number, number, string, string, string, string, string, string, boolean, boolean][] {
+//   const arr: [string, number, number, string, string, string, string, string, string, boolean, boolean][] = [];
+//   const arr1: [string, number, number, string, string, string, string, string, string, boolean, boolean][] = [];
+//   const colorConditions: string[] = [];
+//   const producerConditions: string[] = [];
+//   const typeConditions: string[] = [];
+//   const inputsChecked = document.querySelectorAll("input")
+//   const saveChecked: string[] = [];
+//   inputsChecked.forEach(e => {
+//     if (e.type === "checkbox" && e.checked) {
+//       saveChecked.push(e.id)
+//       console.log(inputsChecked)
+//       localStorage.saveChecked = JSON.stringify(saveChecked);
+//       switch (e.value) {
+//         case 'color': colorConditions.push(e.id);
+//         break;
+//         case 'producer': producerConditions.push(e.id);
+//         break;
+//         case 'type': typeConditions.push(e.id);
+//       }
+//     }
+//   });
 
-  products.forEach((e: [string, number, number, string, string, string, string, string, string, boolean, boolean]) => {
-    if ((colorConditions.includes(e[4]) || colorConditions.length < 1) && 
-    (producerConditions.includes(e[5]) || producerConditions.length < 1) && 
-    (typeConditions.includes(e[8]) || typeConditions.length < 1)) {
-      arr.push(e)
-    }
-  })
+//   products.forEach((e: [string, number, number, string, string, string, string, string, string, boolean, boolean]) => {
+//     if ((colorConditions.includes(e[4]) || colorConditions.length < 1) && 
+//     (producerConditions.includes(e[5]) || producerConditions.length < 1) && 
+//     (typeConditions.includes(e[8]) || typeConditions.length < 1)) {
+//       arr.push(e)
+//     }
+//   })
 
   // const priceRange = ((document.querySelector('.price-range') as HTMLElement).textContent as unknown as string).split('-');
   // const yearRange = ((document.querySelector('.year-range') as HTMLElement).textContent as unknown as string).split('-');
@@ -268,10 +311,10 @@ function sortBy(): [string, number, number, string, string, string, string, stri
   //   }
   // })
 
-  if ((document.querySelector('.slider-click') as HTMLInputElement).classList.contains('checked')) {
-    return arr1.filter(e => e[9] === true);
-  }
+//   if ((document.querySelector('.slider-click') as HTMLInputElement).classList.contains('checked')) {
+//     return arr1.filter(e => e[9] === true);
+//   }
 
-  return arr1;
-}
+//   return arr1;
+// }
 

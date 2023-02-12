@@ -22,6 +22,7 @@ export function Header(props: {isBottomLineOn: boolean}) {
             <h5 className="header_link"><Link to="/blog">Blog</Link></h5>
             <h5 className="header_link"><Link to="/our-story">Our Story</Link></h5>
           </div>
+          <div className='header_line'></div>
           <div className="header_image-links">
             <img className="header_icon" src={lupeIcon} alt="Logo" onClick = {() => (document.querySelector('.filter_search') as HTMLInputElement).focus()} />
             <img className="header_icon" src={cartIcon} alt="Logo" />

@@ -1,20 +1,9 @@
-import { Template } from "./interfaces";
-import { Product, products } from "./products-list";
-import { searchFilter } from "./search";
+import { SearchPannelType, Template } from "./interfaces";
 
-export function ProductList() {
- 
-  // const arr = searchFilter();
 
-  const arr = products
+export function ProductList(props: SearchPannelType) {
 
-  // const arr = arrayOfProducts
-  // list.innerText = "";
-  // if (arr.length < 1) {
-  //   list.innerText = "Sorry, there are no products under your filters";
-  //   }
-  // for (let i = 0; i < arr.length; i++) {
-  //   const test = new Product(...arr[i])
+  const arr = props.arr
 
   // const mark = document.createElement('div');
   // if (test.isInCart === true) {
