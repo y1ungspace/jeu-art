@@ -1,6 +1,6 @@
-import cartIcon from './assets/icons/shopping-cart 1.svg';
-import personIcon from './assets/icons/Icon color-1.svg';
-import lupeIcon from './assets/icons/Icon color.svg';
+import cartIcon from '../../assets/icons/shopping-cart 1.svg';
+import personIcon from '../../assets/icons/Icon color-1.svg';
+import lupeIcon from '../../assets/icons/Icon color.svg';
 import { Link } from 'react-router-dom';
 
 export function Header(props: {isBottomLineOn: boolean}) {

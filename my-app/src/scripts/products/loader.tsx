@@ -1,4 +1,4 @@
-import { SearchPannelType, Template } from "./interfaces";
+import { SearchPannelType, Template } from "../abstracts/interfaces";
 
 
 export function ProductList(props: SearchPannelType) {

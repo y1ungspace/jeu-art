@@ -1,9 +1,9 @@
-import arrowIcon from './assets/icons/arrow.svg';
-import facebookIcon from './assets/icons/facebook.svg';
-import githubIcon from './assets/icons/github.svg';
-import instIcon from './assets/icons/inst.svg';
-import twitterIcon from './assets/icons/twitter.svg';
-import inIcon from './assets/icons/in.svg'
+import arrowIcon from '../../assets/icons/arrow.svg';
+import facebookIcon from '../../assets/icons/facebook.svg';
+import githubIcon from '../../assets/icons/github.svg';
+import instIcon from '../../assets/icons/inst.svg';
+import twitterIcon from '../../assets/icons/twitter.svg';
+import inIcon from '../../assets/icons/in.svg'
 import { Link } from 'react-router-dom';
 
 export function Footer() {

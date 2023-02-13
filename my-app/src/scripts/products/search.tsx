@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import closeIcon from './assets/icons/close.svg';
-import { products } from './products-list';
-import { Product } from './interfaces';
+import closeIcon from '../../assets/icons/close.svg';
+import { products } from '../abstracts/products-list';
+import { Product } from '../abstracts/interfaces';
 import { ProductList } from './loader';
 
 // let products = JSON.parse(localStorage.products);

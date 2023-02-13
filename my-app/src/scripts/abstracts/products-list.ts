@@ -1,29 +1,29 @@
 import { Template } from "./interfaces"
 
-import img267 from "./assets/images/267.jpg";
-import img268 from "./assets/images/268.jpg";
-import img1813 from "./assets/images/1813.jpg";
-import img4875 from "./assets/images/4875.jpg";
-import imgB33 from "./assets/images/b33.jpg";
-import imgB64 from "./assets/images/b64.jpg";
-import imgCandeleholder from "./assets/images/candleholder.jpg";
-import imgDSS from "./assets/images/dss.jpg";
-import imgEero from "./assets/images/eero.jpg";
-import imgHammerRed from "./assets/images/hammer-red.jpg";
-import imgHammerYellow from "./assets/images/hammer-yellow.jpg";
-import imgKoror from "./assets/images/koror.jpg";
-import imgMassimo from "./assets/images/massimo.jpg";
-import imgMg5Red from "./assets/images/mg5-red.jpg";
-import imgMg5White from "./assets/images/mg5-white.jpg";
-import imgModus from "./assets/images/modus.jpg";
-import imgP40 from "./assets/images/p40.jpg";
-import imgPelikan from "./assets/images/pelikan.jpg";
-import imgPhilippe from "./assets/images/philippe.jpg";
-import imgPlia from "./assets/images/plia.jpg";
-import imgRoger from "./assets/images/roger.jpg";
-import imgTango from "./assets/images/tango.jpg";
-import imgTogo from "./assets/images/togo.jpg";
-import imgWassily from "./assets/images/wassily.jpg";
+import img267 from "../../assets/images/267.jpg";
+import img268 from "../../assets/images/268.jpg";
+import img1813 from "../../assets/images/1813.jpg";
+import img4875 from "../../assets/images/4875.jpg";
+import imgB33 from "../../assets/images/b33.jpg";
+import imgB64 from "../../assets/images/b64.jpg";
+import imgCandeleholder from "../../assets/images/candleholder.jpg";
+import imgDSS from "../../assets/images/dss.jpg";
+import imgEero from "../../assets/images/eero.jpg";
+import imgHammerRed from "../../assets/images/hammer-red.jpg";
+import imgHammerYellow from "../../assets/images/hammer-yellow.jpg";
+import imgKoror from "../../assets/images/koror.jpg";
+import imgMassimo from "../../assets/images/massimo.jpg";
+import imgMg5Red from "../../assets/images/mg5-red.jpg";
+import imgMg5White from "../../assets/images/mg5-white.jpg";
+import imgModus from "../../assets/images/modus.jpg";
+import imgP40 from "../../assets/images/p40.jpg";
+import imgPelikan from "../../assets/images/pelikan.jpg";
+import imgPhilippe from "../../assets/images/philippe.jpg";
+import imgPlia from "../../assets/images/plia.jpg";
+import imgRoger from "../../assets/images/roger.jpg";
+import imgTango from "../../assets/images/tango.jpg";
+import imgTogo from "../../assets/images/togo.jpg";
+import imgWassily from "../../assets/images/wassily.jpg";
 
  export class Product implements Template {
     name: string;

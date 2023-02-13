@@ -1,10 +1,10 @@
-import { Header } from "./header";
+import { Header } from "../layouts/header";
 import closeIcon from './assets/icons/close.svg';
 import { ProductList } from "./loader";
 import { useEffect, useState } from "react";
-import { Footer } from "./footer";
-import { TPannel, SearchPannelType, Product } from "./interfaces";
-import { products } from "./products-list";
+import { Footer } from "../layouts/footer";
+import { TPannel, SearchPannelType, Product } from "../abstracts/interfaces";
+import { products } from "../abstracts/products-list";
 import { SearchInput, searchQuery } from "./search";
 
 function Pannel(props: TPannel) {
