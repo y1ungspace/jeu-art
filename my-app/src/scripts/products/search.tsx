@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import closeIcon from '../../assets/icons/close.svg';
-import { products } from '../abstracts/products-list';
-import { Product } from '../abstracts/interfaces';
-import { ProductList } from './loader';
 
 // let products = JSON.parse(localStorage.products);
 
 export let searchQuery = {
-  search: ""
+  search: "",
+  sortBy: "Alphabetic: Ascending",
 }
 
 export function SearchInput() {
@@ -16,7 +14,7 @@ export function SearchInput() {
   function handleUpdate(input: React.ChangeEvent<HTMLInputElement>) {
     setValue(input.target.value);
     searchQuery.search = input.target.value;
-    reloadEvent('inputUpdated')
+    reloadEvent('searchUpdated')
   }
 
  return(
@@ -30,6 +28,26 @@ export function SearchInput() {
 function reloadEvent(eventName: string) {
   const event = new Event(eventName);
   document.dispatchEvent(event);
+}
+
+function ShopBy() {
+
+}
+
+export function SortBy() {
+  function handleChange(e: ChangeEvent<HTMLSelectElement>) {
+    searchQuery.sortBy = e.target.value;
+    reloadEvent('searchUpdated');
+  }
+  return(
+    <select name="shop-by" className="filter_shop-by" placeholder="Shop By" onChange={(e) => handleChange(e)}>
+            <option>Sort By</option>
+            <option value="Alphabetic: Ascending">Alphabetic: Ascending</option>
+            <option value="Alphabetic: Descending">Alphabetic: Descending</option>
+            <option value="Year: Ascending">Year: Ascending</option>
+            <option value="Year: Descending">Year: Descending</option>
+     </select>
+  )
 }
 
 

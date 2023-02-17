@@ -1,11 +1,10 @@
 import { Header } from "../layouts/header";
-import closeIcon from './assets/icons/close.svg';
 import { ProductList } from "./loader";
 import { useEffect, useState } from "react";
 import { Footer } from "../layouts/footer";
 import { TPannel, SearchPannelType, Product } from "../abstracts/interfaces";
 import { products } from "../abstracts/products-list";
-import { SearchInput, searchQuery } from "./search";
+import { SearchInput, SortBy, searchQuery } from "./search";
 
 function Pannel(props: TPannel) {
   const productsArr = products;
@@ -42,13 +41,6 @@ function SearchPannel(props: SearchPannelType) {
     <section className="filter">
         <form>
           <SearchInput />
-          <select name="shop-by" className="filter_shop-by" placeholder="Shop By">
-            <option>Shop By</option>
-            <option value="Alphabetic: Ascending">Alphabetic: Ascending</option>
-            <option value="Alphabetic: Descending">Alphabetic: Descending</option>
-            <option value="Year: Ascending">Year: Ascending</option>
-            <option value="Year: Descending">Year: Descending</option>
-          </select>
           <div className="filter_sort-by">
             <div className="filter_sort-by_wrapper">
               <Pannel pannelType="color"/>
@@ -56,6 +48,7 @@ function SearchPannel(props: SearchPannelType) {
               <Pannel pannelType="producer"/>
             </div>
           </div>
+          <SortBy />
           {/* <div className="filter_range">
             <div className="filter_range_wrapper">
               <p>Price</p>
@@ -99,20 +92,33 @@ export function Products() {
   const [arrOfProduct, setProducts] = useState<Product[]>(products)
   const [isLoaded, setStatus] = useState(false)
 
-  useEffect(() => {setStatus(true)}, []);
+  useEffect(() => {
+    setStatus(true)
+    setProducts(targetProducts())
+  }, []);
 
-  document.addEventListener('inputUpdated', () => {
+  document.addEventListener('searchUpdated', () => {
     const arr = targetProducts()
     setProducts(arr);
   })
 
   function targetProducts() {
     const newArr: Product[] = [];
-    products.map(product => {
-      if (product.name.toLowerCase().includes(searchQuery.search)) {
+    products.forEach(product => {
+      if (product.name.toLowerCase().includes(searchQuery.search)) { //search filter
         newArr.push(product)
       }
     })
+    switch (searchQuery.sortBy) {
+          case 'Alphabetic: Ascending': newArr.sort((a: Product, b: Product) => a.name.localeCompare(b.name));
+            break;
+          case 'Alphabetic: Descending': newArr.sort((b: Product, a: Product) => a.name.localeCompare(b.name));
+            break;
+          case 'Year: Ascending': newArr.sort((a: Product, b: Product) => a.year - b.year);
+            break;
+          case 'Year: Descending': newArr.sort((b: Product, a: Product) => a.year - b.year);
+        }
+        console.log(searchQuery, newArr)
     return newArr;
   }
 
@@ -132,6 +138,6 @@ export function Products() {
   )
 }
 
-function reloadCards(): any {
-  throw new Error("Function not implemented.");
-}
+// function reloadCards(): any {
+//   throw new Error("Function not implemented.");
+// }
