@@ -1,38 +1,13 @@
 import { Footer } from "../layouts/footer";
 import { Header } from "../layouts/header";
+import { Slider } from "./slider";
 
 export function Home() {
   return(
     <body>
       <Header isBottomLineOn={false}/>
       <main>
-        <input type="radio" name="radio" id="button-1" checked></input>
-        <input type="radio" name="radio" id="button-2"></input>
-        <input type="radio" name="radio" id="button-3"></input>
-        <input type="radio" name="radio" id="button-4"></input>
-        <input type="radio" name="radio" id="button-5"></input>
-        <section className="home_tab">
-          <h1 className="h1 home_title">Product name</h1>
-          <h2 className="h2 home_cost">cost</h2>
-          <button className="home_button">View Product</button>
-          <div className="home_navigation">
-            <label htmlFor="button-1">
-                <div className="home_navigarion_dot"></div>
-            </label>
-            <label htmlFor="button-2">
-                <div className="home_navigarion_dot"></div>
-            </label>
-            <label htmlFor="button-3">
-                <div className="home_navigarion_dot"></div>
-            </label>
-            <label htmlFor="button-4">
-                <div className="home_navigarion_dot"></div>
-            </label>
-            <label htmlFor="button-5">
-                <div className="home_navigarion_dot"></div>
-            </label>
-          </div>
-        </section>
+        <Slider />
         <section>
           <div className="popular_header">
               <h1 className="popular_title">Shop the most popular</h1>
