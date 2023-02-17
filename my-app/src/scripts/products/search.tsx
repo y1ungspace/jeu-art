@@ -1,8 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import closeIcon from '../../assets/icons/close.svg';
 
-// let products = JSON.parse(localStorage.products);
-
 export let searchQuery = {
   search: "",
   sortBy: "Alphabetic: Ascending",

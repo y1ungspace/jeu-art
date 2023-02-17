@@ -21,7 +21,10 @@ export function ProductList(props: SearchPannelType) {
  } return( 
     <>
      {arr.map((card: Template) => (
-      <Card name={card.name} cost={card.cost} image={card.image} key={card.name}/>
+      <Card name={card.type?.slice(0, 1).toUpperCase() + card.type!.slice(1) + ' ' + card.name} 
+      cost={card.cost} 
+      image={card.image} 
+      key={card.name}/>
      ))}
     </>)
 }
@@ -37,7 +40,7 @@ function Card(props: Template) {
       </div>
       <div className="product_inf">
         <h3 className="h3 product_name">{props.name}</h3>
-        <h4 className="h4">{props.cost}</h4>
+        <h4 className="h4">{'€ ' + props.cost}</h4>
       </div>
     </div>
   )
