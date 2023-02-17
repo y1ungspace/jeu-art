@@ -3,7 +3,7 @@ import closeIcon from '../../assets/icons/close.svg';
 
 export let searchQuery = {
   search: "",
-  sortBy: "Alphabetic: Ascending",
+  sortBy: 'Popularity: Descending',
 }
 
 export function SearchInput() {
@@ -40,6 +40,8 @@ export function SortBy() {
   return(
     <select name="shop-by" className="filter_shop-by" placeholder="Shop By" onChange={(e) => handleChange(e)}>
             <option>Sort By</option>
+            <option value="Year: Descending">Popularity: Ascending</option>
+            <option value="Year: Descending">Popularity: Descending</option>
             <option value="Alphabetic: Ascending">Alphabetic: Ascending</option>
             <option value="Alphabetic: Descending">Alphabetic: Descending</option>
             <option value="Year: Ascending">Year: Ascending</option>

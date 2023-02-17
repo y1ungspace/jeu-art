@@ -110,6 +110,10 @@ export function Products() {
       }
     })
     switch (searchQuery.sortBy) {
+          case 'Popularity: Ascending': newArr.sort((b: Product, a: Product) => a.popularity - b.popularity);
+            break;
+          case 'Popularity: Descending': newArr.sort((b: Product, a: Product) => a.popularity - b.popularity);
+            break;
           case 'Alphabetic: Ascending': newArr.sort((a: Product, b: Product) => a.name.localeCompare(b.name));
             break;
           case 'Alphabetic: Descending': newArr.sort((b: Product, a: Product) => a.name.localeCompare(b.name));
@@ -138,6 +142,3 @@ export function Products() {
   )
 }
 
-// function reloadCards(): any {
-//   throw new Error("Function not implemented.");
-// }

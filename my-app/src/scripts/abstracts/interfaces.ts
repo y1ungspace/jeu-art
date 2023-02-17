@@ -23,7 +23,7 @@ export type Product = {
   image: string;
   designer: string;
   type: string;
-  popularity?: number;
+  popularity: number;
   isInCart: boolean;
 }
 

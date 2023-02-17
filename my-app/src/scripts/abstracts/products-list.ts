@@ -259,7 +259,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     image: imgMg5White,
     designer: "Marcel Breuer",
     type: "chair",
-    popularity: 117,
+    popularity: 80,
     isInCart:  false,
   },
   {
@@ -337,7 +337,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     image: imgMg5Red,
     designer: "Marcel Breuer",
     type: "chair",
-    popularity: 80,
+    popularity: 117,
     isInCart:  false,
   },
   {
