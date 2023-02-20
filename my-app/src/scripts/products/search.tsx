@@ -11,16 +11,35 @@ export let searchQuery = {
 export function SearchInput() {
   const [value, setValue] = useState('');
 
-  function handleUpdate(input: React.ChangeEvent<HTMLInputElement>) {
-    setValue(input.target.value);
-    searchQuery.search = input.target.value;
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  function handleUpdate() {
+    const newValue = searchInputRef?.current?.value!;
+    setValue(newValue);
+    searchQuery.search = newValue;
     reloadEvent('searchUpdated')
   }
 
+  function handleRemoving() {
+    setValue('');
+    searchQuery.search = '';
+    searchInputRef?.current?.focus();
+    reloadEvent('searchUpdated');
+  }
+ 
  return(
   <div className="search">
-  <input type="search" className="filter_search" value={value} placeholder="Search..." autoFocus onChange={(e) => handleUpdate(e)}></input>
-  <button className="filter_search_button" type="button" style={{ backgroundImage: `url(${ closeIcon })` }}></button>
+  <input type="search" 
+         className="filter_search" 
+         value={value} 
+         placeholder="Search..." 
+         ref={searchInputRef} 
+         autoFocus 
+         onChange={() => handleUpdate()}></input>
+  <button className="filter_search_button" 
+          type="button" 
+          style={{ backgroundImage: `url(${ closeIcon })` }} 
+          onClick={() => handleRemoving()}></button>
   </div>
  )
 }
