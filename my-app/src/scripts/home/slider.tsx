@@ -68,7 +68,7 @@ export function Slider() {
     const homeSlider = mockSliderList.map(product => 
      
       <div className="home_slider_elem" style={{backgroundImage: `url("${product.image}")`,  backgroundSize: "cover"}}>
-        <h1 className="h1 home_title">{product.name}</h1>
+        <h1 className="h1 home_title">{product.type?.slice(0, 1).toUpperCase() + product.type!.slice(1) + ' ' + product.name}</h1>
         <h2 className="h2 home_cost">{'€ ' + product.cost}</h2>
         <button className="home_button">View Product</button>
       </div>

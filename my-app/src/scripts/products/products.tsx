@@ -5,6 +5,7 @@ import { Footer } from "../layouts/footer";
 import { TPannel, SearchPannelType, Product } from "../abstracts/interfaces";
 import { products } from "../abstracts/products-list";
 import { SearchInput, SortBy, searchQuery } from "./search";
+import listIcon from '../../assets/icons/list-arrow.svg';
 
 function Pannel(props: TPannel) {
   const productsArr = products;
@@ -41,14 +42,18 @@ function SearchPannel(props: SearchPannelType) {
     <section className="filter">
         <form>
           <SearchInput />
-          <div className="filter_sort-by">
-            <div className="filter_sort-by_wrapper">
-              <Pannel pannelType="color"/>
-              <Pannel pannelType="type"/>
-              <Pannel pannelType="producer"/>
+          <section className="filter-wrapper">
+            <div className="filter_select-box">
+              <div className="filter_select-box_top">
+                <p className="filer_heading">Shop by</p>
+                <button className="filter_select-box_icon" type="button" style={{backgroundImage: `url(${listIcon})`}}></button>
+              </div>
+                {/* <Pannel pannelType="color"/>
+                <Pannel pannelType="type"/>
+                <Pannel pannelType="producer"/> */}
             </div>
-          </div>
-          <SortBy />
+            <SortBy />
+          </section>
           {/* <div className="filter_range">
             <div className="filter_range_wrapper">
               <p>Price</p>
@@ -110,9 +115,7 @@ export function Products() {
       }
     })
     switch (searchQuery.sortBy) {
-          case 'Popularity: Ascending': newArr.sort((b: Product, a: Product) => a.popularity - b.popularity);
-            break;
-          case 'Popularity: Descending': newArr.sort((b: Product, a: Product) => a.popularity - b.popularity);
+          case 'Popular First': newArr.sort((b: Product, a: Product) => a.popularity - b.popularity);
             break;
           case 'Alphabetic: Ascending': newArr.sort((a: Product, b: Product) => a.name.localeCompare(b.name));
             break;
@@ -122,7 +125,6 @@ export function Products() {
             break;
           case 'Year: Descending': newArr.sort((b: Product, a: Product) => a.year - b.year);
         }
-        console.log(searchQuery, newArr)
     return newArr;
   }
 

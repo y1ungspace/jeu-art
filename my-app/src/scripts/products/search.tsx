@@ -1,9 +1,11 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
+import { Transition } from 'react-transition-group';
 import closeIcon from '../../assets/icons/close.svg';
+import listIcon from '../../assets/icons/list-arrow.svg';
 
 export let searchQuery = {
   search: "",
-  sortBy: 'Popularity: Descending',
+  sortBy: 'Popular First',
 }
 
 export function SearchInput() {
@@ -33,20 +35,76 @@ function ShopBy() {
 }
 
 export function SortBy() {
-  function handleChange(e: ChangeEvent<HTMLSelectElement>) {
-    searchQuery.sortBy = e.target.value;
+  const [isOpened, setOpened] = useState(false);
+  const [nameAsc, setNameAsc] = useState(true);
+  const [yearAsc, setYearAsc] = useState(true);
+
+  // const filterRef = useRef<null | HTMLDivElement>(null);
+
+  function handleClick(e: EventTarget & HTMLButtonElement) {
+    const buttons = document.getElementsByClassName('filter_select-box_item');
+    const arr = Array.from(buttons)
+
+    arr.forEach(e => e.classList.remove('select-box_item--checked'))
+    e.classList.add('select-box_item--checked');
+
+    if (e.id === 'popular') {
+      searchQuery.sortBy = 'Popular First';
+      setNameAsc(true);
+      setYearAsc(true);
+    } else if (e.id === 'name') {
+      setYearAsc(true);
+      if (nameAsc) {
+        setNameAsc(false)
+        searchQuery.sortBy = 'Alphabetic: Ascending';
+      } else {
+        setNameAsc(true)
+        searchQuery.sortBy = 'Alphabetic: Descending';
+      }
+    } else {
+       setNameAsc(true);
+      if (yearAsc) {
+        setYearAsc(false)
+        searchQuery.sortBy = 'Year: Ascending';
+      } else {
+        setYearAsc(true)
+        searchQuery.sortBy = 'Year: Descending';
+      }
+    }
     reloadEvent('searchUpdated');
   }
+
+  function handleClose() {
+    isOpened ? setOpened(false) : setOpened(true);
+    // filterRef.current?.classList.toggle('filter_select-box_items--closed')
+    
+  }
+
   return(
-    <select name="shop-by" className="filter_shop-by" placeholder="Shop By" onChange={(e) => handleChange(e)}>
-            <option>Sort By</option>
-            <option value="Year: Descending">Popularity: Ascending</option>
-            <option value="Year: Descending">Popularity: Descending</option>
-            <option value="Alphabetic: Ascending">Alphabetic: Ascending</option>
-            <option value="Alphabetic: Descending">Alphabetic: Descending</option>
-            <option value="Year: Ascending">Year: Ascending</option>
-            <option value="Year: Descending">Year: Descending</option>
-     </select>
+    <div className="filter_select-box"> 
+      <div className="filter_select-box_top">
+        <p className="filer_heading">Shop by</p>
+        <button className="filter_select-box_icon" 
+                type="button" 
+                style={{
+                  backgroundImage: `url(${listIcon})`,
+                  transform: `scaleY(${isOpened ? -1 : 1})`    
+                }} 
+                onClick={() => handleClose()}></button>
+      </div>
+      <Transition in={isOpened} timeout={1}>
+        {(state: string) => (
+           <div className={`filter_select-box_items ${state}`}>
+           <button id="popular" type="button" className='filter_select-box_item select-box_item--checked' onClick={(e) => 
+             handleClick(e.currentTarget)}>Popular first</button>
+           <button id="name" type="button" className='filter_select-box_item' onClick={(e) => 
+             handleClick(e.currentTarget)}>{nameAsc ? '↑ Name' : '↓ Name'}</button>
+           <button id="year" type="button" className='filter_select-box_item' onClick={(e) => 
+             handleClick(e.currentTarget)}>{yearAsc ? '↑ Year' : '↓ Year'}</button>
+           </div>
+        )}
+      </Transition>
+    </div>
   )
 }
 
