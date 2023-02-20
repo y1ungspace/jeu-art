@@ -5,15 +5,6 @@ export function ProductList(props: SearchPannelType) {
 
   const arr = props.arr
 
-  // const mark = document.createElement('div');
-  // if (test.isInCart === true) {
-  //   mark.classList.add('product_added');
-  //   mark.textContent = 'In Cart';
-  //   img.append(mark);
-  // }
-  
-//  }
-
  if (arr.length === 0) {
   return <p>Sorry, there are no products under your filters</p>
  } else {
@@ -36,7 +27,6 @@ function Card(props: Template) {
         <div className="product-card_add">
           <p className="pruduct_add_text">ADD TO CART</p>
         </div>
-        <div className="product_added">In Cart</div>
       </div>
       <div className="product_inf">
         <h3 className="h3 product_name">{props.name}</h3>

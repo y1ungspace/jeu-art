@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Transition } from 'react-transition-group';
 import closeIcon from '../../assets/icons/close.svg';
 import listIcon from '../../assets/icons/list-arrow.svg';

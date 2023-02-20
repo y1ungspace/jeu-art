@@ -17,6 +17,12 @@ input {
 .popular_link-all {
   margin-left: auto;
   line-height: 43px;
+  color: #A18A68;
+  transition: 0.3s;
+
+  &:hover {
+   color: #000000;
+  }
 }
 
 .popular_container {
