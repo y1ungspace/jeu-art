@@ -20,7 +20,7 @@ export function Header(props: {isBottomLineOn: boolean}) {
           <div className="header_text-links">
             <h5 className="header_link"><Link to="/products">Shop</Link></h5>
             <h5 className="header_link"><Link to="/blog">Blog</Link></h5>
-            <h5 className="header_link"><Link to="/our-story">Our Story</Link></h5>
+            <h5 className="header_link"><Link to="/product-1">Our Story</Link></h5>
           </div>
           <div className='header_line'></div>
           <div className="header_image-links">

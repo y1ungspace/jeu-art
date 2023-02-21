@@ -53,7 +53,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     }
  }
 
- export const products: Product[] = [  //TODO: add id and more images
+ export const products: Product[] = [  //TODO: add id and image array and color array
   {
     name: "Handkerchief",
     amount: 4,
@@ -63,7 +63,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     producer: "KNOLL",
     image: imgMassimo,
     designer: "Massimo and Vignelli",
-    type: "chair",
+    type: "armchair",
     popularity: 105,
     isInCart:  false,
   },
@@ -180,7 +180,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     producer: "KNOLL",
     image: imgB64,
     designer: "Marcel Breuer",
-    type: "chair",
+    type: "armchair",
     popularity: 63,
     isInCart:  false,
   },
@@ -258,7 +258,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     producer: "KNOLL",
     image: imgMg5White,
     designer: "Marcel Breuer",
-    type: "chair",
+    type: "armchair",
     popularity: 80,
     isInCart:  false,
   },
@@ -336,7 +336,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     producer: "KNOLL",
     image: imgMg5Red,
     designer: "Marcel Breuer",
-    type: "chair",
+    type: "armchair",
     popularity: 117,
     isInCart:  false,
   },
@@ -364,6 +364,19 @@ import imgWassily from "../../assets/images/wassily.jpg";
     designer: "CHARLES & RAY EAMES",
     type: "chair",
     popularity: 59,
+    isInCart:  false,
+  },
+  {
+    name: "41701",
+    amount: 6,
+    year: 1977,
+    cost: 122,
+    color: "black",
+    producer: "OSRAM",
+    image: "https://www.dropbox.com/s/1r6kjrjqx62wv5m/302187540_145305161198015_8567532113954371301_n.jpg?raw=1",
+    designer: "DIETTER WITTE",
+    type: "lamp",
+    popularity: 39,
     isInCart:  false,
   },
  ]

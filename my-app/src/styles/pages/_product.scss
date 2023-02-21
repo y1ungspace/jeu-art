@@ -1,0 +1,136 @@
+.product_frontbar {
+  display: flex;
+  width: 1248px;
+  gap: 62px;
+  margin: -18px auto 0px auto;
+}
+
+.product_frontbar_images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  gap: 24px 39px;
+}
+
+.product_frontbar_images_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@mixin productOnHover {
+  transition: 1s;
+  &:hover {
+    box-shadow: 4px 4px 23px 4px rgba(0, 0, 0, 0.2);
+    .product_add {
+      visibility:visible;
+    }
+  }
+}
+
+.product_frontbar_img {
+  width: 120px;
+  height: 120px;    
+  border-radius: 8px;
+  background-color: lightsteelblue;
+  cursor: pointer;
+  @include productOnHover()
+}
+
+.product_frontbar_img--selected {
+  width: 540px;
+  height: 600px;
+  border-radius: 8px;
+  background-color: lightsteelblue;
+  cursor: pointer;
+  @include productOnHover()
+}
+
+.product_frontbar_images_navigator {
+  width: 540px;
+  border: 1px solid #D8D8D8;
+  margin-left: auto;
+  margin-bottom: 66px;
+}
+
+.product_frontbar_description {
+  display: flex;
+  flex-direction: column;
+  width: 486px;
+  padding-left: 2px;
+}
+
+.product_frontbar_rating-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.product_frontbar_buttons-box {
+  display: flex;
+  gap: 23px;
+  margin-bottom: 80px;
+}
+
+.counter-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 102px;
+  height: 53px;
+  background: #EFEFEF;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #707070;
+}
+
+.counter-box_button {
+  width: 10px;
+  height: 27px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: #707070;
+}
+
+.product_frontbar_icons {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 37px;
+}
+
+.icon {
+  height: 18px;
+  cursor: pointer;
+}
+
+.divider {
+  height: 20px;
+  border: 1px #D8D8D8 solid;
+  margin: 0 15px;
+}
+
+//
+
+.product_information {
+  width: 1248px;
+  margin: 0 auto 96px auto;
+}
+
+.product_information_switch {
+  display: flex;
+  gap: 96px;
+}
+
+.product_information_button {
+  height: 94px;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+}
+
+.similar_items {
+  width: 1248px;
+  margin: 0 auto;
+}

@@ -13,12 +13,7 @@
   border-radius: 8px;
   transition: 1s;
   cursor: pointer;
-  &:hover {
-    box-shadow: 4px 4px 23px 4px rgba(0, 0, 0, 0.2);
-    .product_add {
-      visibility:visible;
-    }
-  }
+  @include productOnHover()
 }
 
 .product_name {
