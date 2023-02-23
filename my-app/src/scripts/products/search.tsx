@@ -9,19 +9,16 @@ export let searchQuery = {
 }
 
 export function SearchInput() {
-  const [value, setValue] = useState('');
 
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   function handleUpdate() {
     const newValue = searchInputRef?.current?.value!;
-    setValue(newValue);
     searchQuery.search = newValue;
     reloadEvent('searchUpdated')
   }
 
   function handleRemoving() {
-    setValue('');
     searchQuery.search = '';
     searchInputRef?.current?.focus();
     reloadEvent('searchUpdated');
@@ -31,7 +28,7 @@ export function SearchInput() {
   <div className="search">
   <input type="search" 
          className="filter_search" 
-         value={value} 
+         value={searchQuery.search} 
          placeholder="Search..." 
          ref={searchInputRef} 
          autoFocus 
@@ -102,7 +99,7 @@ export function SortBy() {
   return(
     <div className="filter_select-box"> 
       <div className="filter_select-box_top">
-        <p className="filer_heading">Shop by</p>
+        <p className="filer_heading">Sort by</p>
         <button className="filter_select-box_icon" 
                 type="button" 
                 style={{

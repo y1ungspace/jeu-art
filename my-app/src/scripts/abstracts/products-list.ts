@@ -26,6 +26,7 @@ import imgTogo from "../../assets/images/togo.jpg";
 import imgWassily from "../../assets/images/wassily.jpg";
 
  export class Product implements Template {
+    id: number;
     name: string;
     amount: number;
     year: number;
@@ -37,8 +38,9 @@ import imgWassily from "../../assets/images/wassily.jpg";
     type: string;
     popularity: number;
     isInCart: boolean;
-    constructor(name: string, amount: number, year: number, cost: number, color: string, producer: string, 
+    constructor(id: number, name: string, amount: number, year: number, cost: number, color: string, producer: string, 
       image: string, designer: string, type: string, popularity: number, isInCart: boolean) {
+      this.id = id;
       this.name = name;
       this.amount = amount;
       this.year = year;
@@ -55,6 +57,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
 
  export const products: Product[] = [  //TODO: add id and image array and color array
   {
+    id: 1,
     name: "Handkerchief",
     amount: 4,
     year: 1980,
@@ -68,6 +71,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 2,
     name: "Plia",
     amount: 2,
     year: 1970,
@@ -81,6 +85,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 3,
     name: "267",
     amount: 2,
     year: 1988,
@@ -94,6 +99,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 4,
     name: "Tulipe",
     amount: 6,
     year: 1970,
@@ -107,6 +113,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 5,
     name: "Pelikan",
     amount: 4,
     year: 1990,
@@ -120,6 +127,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 6,
     name: "268",
     amount: 1,
     year: 1988,
@@ -133,6 +141,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 7,
     name: "P40",
     amount: 3,
     year: 1980,
@@ -146,6 +155,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 8,
     name: "Hammer",
     amount: 12,
     year: 1974,
@@ -159,6 +169,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 9,
     name: "Roger Carpon",
     amount: 1,
     year: 1950,
@@ -172,6 +183,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 10,
     name: "B64",
     amount: 4,
     year: 1950,
@@ -185,6 +197,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 11,
     name: "4875",
     amount: 1,
     year: 1950,
@@ -198,6 +211,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 12,
     name: "Wassily",
     amount: 1,
     year: 1970,
@@ -211,6 +225,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 13,
     name: "1813",
     amount: 1,
     year: 1970,
@@ -224,7 +239,8 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
-    name: "Hаmmer",
+    id: 14,
+    name: "Hammer",
     amount: 2,
     year: 1974,
     cost: 700,
@@ -237,6 +253,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 15,
     name: "Tango",
     amount: 1,
     year: 1980,
@@ -250,6 +267,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 16,
     name: "mg5",
     amount: 2,
     year: 1970,
@@ -263,6 +281,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 17,
     name: "",
     amount: 2,
     year: 1960,
@@ -276,6 +295,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 18,
     name: "B33",
     amount: 1,
     year: 1970,
@@ -289,6 +309,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 19,
     name: "Koror",
     amount: 2,
     year: 1950,
@@ -302,6 +323,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 20,
     name: "Togo",
     amount: 2,
     year: 1980,
@@ -315,6 +337,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 21,
     name: "Modus",
     amount: 1,
     year: 1970,
@@ -328,7 +351,8 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
-    name: "мg5",
+    id: 22,
+    name: "mg5",
     amount: 4,
     year: 1970,
     cost: 1480,
@@ -341,6 +365,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 23,
     name: "Philippe Rogier",
     amount: 2,
     year: 1970,
@@ -354,6 +379,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 24,
     name: "DSS",
     amount: 6,
     year: 1980,
@@ -367,8 +393,9 @@ import imgWassily from "../../assets/images/wassily.jpg";
     isInCart:  false,
   },
   {
+    id: 25,
     name: "41701",
-    amount: 6,
+    amount: 1,
     year: 1977,
     cost: 122,
     color: "black",
@@ -377,6 +404,76 @@ import imgWassily from "../../assets/images/wassily.jpg";
     designer: "DIETTER WITTE",
     type: "lamp",
     popularity: 39,
+    isInCart:  false,
+  },
+  {
+    id: 26,
+    name: "Brumbury",
+    amount: 1,
+    year: 1972,
+    cost: 2100,
+    color: "orange",
+    producer: "GUZZINI",
+    image: "https://www.dropbox.com/s/addmm845i3edov1/P1550742.jpg.webp?raw=1",
+    designer: "Luigi Massoni",
+    type: "lamp",
+    popularity: 26,
+    isInCart:  false,
+  },
+  {
+    id: 27,
+    name: "Harveiluce",
+    amount: 2,
+    year: 1977,
+    cost: 368,
+    color: "white",
+    producer: "GUZZINI",
+    image: "https://www.dropbox.com/s/fa2yumzpcf2fm1l/296155398_144982371488711_1090905325727216530_n.jpg?raw=1",
+    designer: "HARVEY GUZZINI",
+    type: "lamp",
+    popularity: 41,
+    isInCart:  false,
+  },
+  {
+    id: 28,
+    name: "Atollo",
+    amount: 1,
+    year: 1973,
+    cost: 1285,
+    color: "bronze",
+    producer: "Oluce",
+    image: "https://www.objekt-vintage.nl/wp-content/uploads/2023/01/atollo-4.jpg",
+    designer: "VICO MAGISTRETTI",
+    type: "lamp",
+    popularity: 979,
+    isInCart:  false,
+  },
+  {
+    id: 29,
+    name: "Mod 4043",
+    amount: 1,
+    year: 1964,
+    cost: 5760,
+    color: "metal",
+    producer: "Kartell",
+    image: "https://www.objekt-vintage.nl/wp-content/uploads/2021/08/kartell-lamp-5.jpg",
+    designer: "FILIPPO PANSECA",
+    type: "lamp",
+    popularity: 76,
+    isInCart:  false,
+  },
+  {
+    id: 30,
+    name: "Akari 26N",
+    amount: 2,
+    year: 1977,
+    cost: 400,
+    color: "beige",
+    producer: "Icamu Noguchi",
+    image: "https://www.objekt-vintage.nl/wp-content/uploads/2022/07/noguchi-6.jpg",
+    designer: "ISAMU NOGUCHI",
+    type: "lamp",
+    popularity: 106,
     isInCart:  false,
   },
  ]

@@ -1,5 +1,6 @@
 
 export interface Template {
+  id: number;
   name: string;
   amount?: number;
   year?: number;
@@ -14,6 +15,7 @@ export interface Template {
 }
  
 export type Product = {
+  id: number;
   name: string;
   amount: number;
   year: number;

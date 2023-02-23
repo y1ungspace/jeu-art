@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { products } from "../abstracts/products-list"
 
-const mockSliderList = products.slice(0, 5);
+const mockSliderList = products.slice(-5);
 
 export function Slider() {
 

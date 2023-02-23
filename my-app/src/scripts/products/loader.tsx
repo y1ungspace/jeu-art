@@ -12,10 +12,10 @@ export function ProductList(props: SearchPannelType) {
  } return( 
     <>
      {arr.map((card: Template) => (
-      <Card name={card.type?.slice(0, 1).toUpperCase() + card.type!.slice(1) + ' ' + card.name} 
+      <Card id={card.id} name={card.type?.slice(0, 1).toUpperCase() + card.type!.slice(1) + ' ' + card.name} 
       cost={card.cost} 
       image={card.image} 
-      key={card.name}/>
+      key={card.id}/>
      ))}
     </>)
 }
