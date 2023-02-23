@@ -2,40 +2,9 @@ import { Header } from "../layouts/header";
 import { ProductList } from "./loader";
 import { useEffect, useState } from "react";
 import { Footer } from "../layouts/footer";
-import { TPannel, SearchPannelType, Product } from "../abstracts/interfaces";
+import { SearchPannelType, Product } from "../abstracts/interfaces";
 import { products } from "../abstracts/products-list";
-import { SearchInput, SortBy, searchQuery } from "./search";
-import listIcon from '../../assets/icons/list-arrow.svg';
-
-function Pannel(props: TPannel) {
-  const productsArr = products;
-  let typeCheck: string = props.pannelType;
-  const arr: string[] = []
-  productsArr.forEach(product => {
-    if (!arr.includes(`${product[typeCheck as keyof typeof product]}`) && product[typeCheck as keyof typeof product] !== '') {
-      arr.push(`${product[typeCheck as keyof typeof product]}`);
-    }
-  })
-  const checkboxes = arr.map(name => 
-    <Checkbox name={name} />
-  )
-  return (
-    <div className="filter_sort-by_color">
-     <h5 className="h5">{typeCheck.slice(0, 1).toUpperCase() + typeCheck.slice(1)}:</h5>
-     {checkboxes}
-  </div>
-  )
-} 
-
-function Checkbox(props: {name: string}) {
-  const nameBig = props.name.slice(0, 1).toUpperCase() + props.name.slice(1)
-  return (
-    <label className="checkbox_label" htmlFor={props.name}>
-    <input className="checkbox" type="checkbox" id={props.name} value={props.name}></input>
-    {nameBig}</label>
-  )
-}
-
+import { SearchInput, ShopBy, SortBy, searchQuery } from "./search";
 
 function SearchPannel(props: SearchPannelType) {
   return(
@@ -43,15 +12,7 @@ function SearchPannel(props: SearchPannelType) {
         <form>
           <SearchInput />
           <section className="filter-wrapper">
-            <div className="filter_select-box">
-              <div className="filter_select-box_top">
-                <p className="filer_heading">Shop by</p>
-                <button className="filter_select-box_icon" type="button" style={{backgroundImage: `url(${listIcon})`}}></button>
-              </div>
-                {/* <Pannel pannelType="color"/>
-                <Pannel pannelType="type"/>
-                <Pannel pannelType="producer"/> */}
-            </div>
+            <ShopBy />
             <SortBy />
           </section>
           {/* <div className="filter_range">
@@ -109,23 +70,32 @@ export function Products() {
 
   function targetProducts() {
     const newArr: Product[] = [];
+    const categarisedArr: Product[] = [];
     products.forEach(product => {
       if (product.name.toLowerCase().includes(searchQuery.search)) { //search filter
         newArr.push(product)
       }
     })
+    newArr.forEach(product => {
+      if ((searchQuery.shopBy.color.length === 0 || (searchQuery.shopBy.color as string[]).includes(product.color)) &&
+          (searchQuery.shopBy.type.length === 0 || (searchQuery.shopBy.type as string[]).includes(product.type)) &&
+          (searchQuery.shopBy.producer.length === 0 || (searchQuery.shopBy.producer as string[]).includes(product.producer)) &&
+          (searchQuery.shopBy.designer.length === 0 || (searchQuery.shopBy.designer as string[]).includes(product.designer))) {
+              categarisedArr.push(product)
+          }
+    })
     switch (searchQuery.sortBy) {
-          case 'Popular First': newArr.sort((b: Product, a: Product) => a.popularity - b.popularity);
+          case 'Popular First': categarisedArr.sort((b: Product, a: Product) => a.popularity - b.popularity);
             break;
-          case 'Alphabetic: Ascending': newArr.sort((a: Product, b: Product) => a.name.localeCompare(b.name));
+          case 'Alphabetic: Ascending': categarisedArr.sort((a: Product, b: Product) => a.name.localeCompare(b.name));
             break;
-          case 'Alphabetic: Descending': newArr.sort((b: Product, a: Product) => a.name.localeCompare(b.name));
+          case 'Alphabetic: Descending': categarisedArr.sort((b: Product, a: Product) => a.name.localeCompare(b.name));
             break;
-          case 'Year: Ascending': newArr.sort((a: Product, b: Product) => a.year - b.year);
+          case 'Year: Ascending': categarisedArr.sort((a: Product, b: Product) => a.year - b.year);
             break;
-          case 'Year: Descending': newArr.sort((b: Product, a: Product) => a.year - b.year);
+          case 'Year: Descending': categarisedArr.sort((b: Product, a: Product) => a.year - b.year);
         }
-    return newArr;
+    return categarisedArr;
   }
 
   return(

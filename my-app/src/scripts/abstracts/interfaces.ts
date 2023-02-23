@@ -21,7 +21,7 @@ export type Product = {
   year: number;
   cost: number;
   color: string;
-  producer?: string;
+  producer: string;
   image: string;
   designer: string;
   type: string;
@@ -35,4 +35,12 @@ export type SearchPannelType = {
 
 export type TPannel = {
   pannelType: keyof Product
+}
+
+export type Colors = {
+  red: string,
+  blue: string,
+  white: string,
+  black: string,
+  metal: string,
 }

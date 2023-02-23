@@ -100,7 +100,7 @@ export function ProductPage() {
             <h4 className="h4">€ 0</h4>
           </div>
         </div>
-      </div> {/* add classes from Home */}
+      </div>
     </section>
     <Footer />
     </>

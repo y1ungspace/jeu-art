@@ -57,3 +57,32 @@
   margin-bottom: 82px;
   align-self: flex-end;
 }
+
+.circled_button{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width:fit-content;
+  padding: 1px 7px;
+  border: none;
+  border-radius: 21px;
+  background-color: #EFEFEF;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #9E9E9E;
+  }
+
+  &.selected {
+    color: #FFFFFF;
+    background-color: #000000;
+  }
+}
+
+
+.circled_button_color-index {
+  min-width: 4px;
+  min-height: 4px;
+  background-color: #A18A68;
+  border-radius: 2px;
+}

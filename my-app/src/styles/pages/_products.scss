@@ -87,6 +87,52 @@ main {
   border: none;
 }
 
+.filter_categories_wrapper {
+  transition: 1s;
+  overflow: hidden;
+  &.entering {
+    opacity: 0;
+    height: 0;
+  }
+
+  &.entered {
+    opacity: 1;
+    height: 250px;
+  }
+
+  &.exiting {
+    opacity: 1;
+    height: 100px;
+  }
+  
+  &.exited {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@mixin categoriesBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  width: 100%;
+}
+
+.filter_categories-box {
+  @include categoriesBox()
+}
+
+.filter_categories_selected-box {
+  @include categoriesBox();
+  padding: 12px 0px;
+}
+
+.filter_categories_title {
+  font-size: 12px;
+  color: #707070;
+}
+
+
 .filter_select-box_items {
   display: flex;
   max-width: 100px;
