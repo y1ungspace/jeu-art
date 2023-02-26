@@ -23,7 +23,7 @@ export function ProductList(props: SearchPannelType) {
 function Card(props: Template) {
   return(
     <div className="product-card">
-      <div className="product-card_img" style={{backgroundImage: `url(${props.image})`}}>
+      <div className="product-card_img" style={{backgroundImage: `url(${props.image![0]})`}}>
         <div className="product-card_add">
           <p className="pruduct_add_text">ADD TO CART</p>
         </div>

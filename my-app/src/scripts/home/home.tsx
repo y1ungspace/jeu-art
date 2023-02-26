@@ -9,7 +9,7 @@ export function Home() {
     const popularProducts = products.sort((a, b) => b.popularity - a.popularity).slice(0, 6);
     const popularProductsList = popularProducts.map(product => (
       <div className="product">
-        <div className="product_img" style={{backgroundImage: `url(${product.image})`}}>
+        <div className="product_img" style={{backgroundImage: `url(${product.image[0]})`}}>
          <div className="product_add">
            <p className="pruduct_add_text">ADD TO CART</p>
           </div>

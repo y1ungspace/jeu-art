@@ -7,7 +7,7 @@ export interface Template {
   cost?: number;
   color?: string;
   producer?: string;
-  image?: string;
+  image?: string[];
   designer?: string;
   type?: string;
   popularity?: number;
@@ -22,7 +22,7 @@ export type Product = {
   cost: number;
   color: string;
   producer: string;
-  image: string;
+  image: string[];
   designer: string;
   type: string;
   popularity: number;
