@@ -45,7 +45,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
     }
  }
 
- export const products: Product[] = [  //TODO: add id and image array and color array
+ export const products: Product[] = [  //TODO: add image array and color array
   {
     id: 1,
     name: "Handkerchief",
@@ -57,9 +57,9 @@ import imgWassily from "../../assets/images/wassily.jpg";
     image: [
       "https://www.dropbox.com/s/2zza2lm2471jsev/320723699_211602001249726_2173405130734800551_n.jpg?raw=1",
       "https://www.dropbox.com/s/39j4jakq2d9uyoa/320454038_173695628680785_1353928483448305383_n.jpg?raw=1",
-      "https://www.dropbox.com/s/hh9p1cgwv1oo79t/320452662_201677209017300_3442773997170667449_n.jpg?raw=1",
+      "https://www.dropbox.com/s/h4ntbedrq32h251/320814010_135985395956113_9162783042946699984_n.jpg?raw=1",
       "https://www.dropbox.com/s/p6amwetieam76ed/320490739_133500239313387_5510244588796398780_n.jpg?raw=1",
-      "https://www.dropbox.com/s/h4ntbedrq32h251/320814010_135985395956113_9162783042946699984_n.jpg?raw=1"
+      "https://www.dropbox.com/s/hh9p1cgwv1oo79t/320452662_201677209017300_3442773997170667449_n.jpg?raw=1",
     ],
     designer: "Massimo and Vignelli",
     type: "armchair",
@@ -329,7 +329,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
   },
   {
     id: 17,
-    name: "",
+    name: "1",
     amount: 2,
     year: 1960,
     cost: 40,
@@ -584,14 +584,14 @@ import imgWassily from "../../assets/images/wassily.jpg";
     producer: "LIGNE ROSET",
     image: [
       "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-1.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-2.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-3.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-4.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-5.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-6.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-7.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-8.jpg",
-      // "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-9.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-2.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-3.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-4.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-5.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-6.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-7.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-8.jpg",
+      "https://www.objekt-vintage.nl/wp-content/uploads/2022/09/togo-black-9.jpg",
     ],
     designer: "Michel Ducaboy",
     type: "sofa",

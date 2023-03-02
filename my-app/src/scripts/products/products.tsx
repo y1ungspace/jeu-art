@@ -15,7 +15,7 @@ function SearchPannel(props: SearchPannelType) {
             <ShopBy />
             <SortBy />
           </section>
-          {/* <div className="filter_range">
+          <div className="filter_range">
             <div className="filter_range_wrapper">
               <p>Price</p>
               <div className="container">
@@ -39,7 +39,7 @@ function SearchPannel(props: SearchPannelType) {
               </div>
             </div>
             <p className="year-range price-range">1950 - 1990</p>
-          </div> */}
+          </div>
           <div className="filter_switches">
             <p>Popular only</p>
             <label className="switch">

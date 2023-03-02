@@ -1,15 +1,26 @@
-import { Link } from "react-router-dom";
-import { products } from "../abstracts/products-list";
+import { Link, useNavigate } from "react-router-dom";
+import { Product, products } from "../abstracts/products-list";
 import { Footer } from "../layouts/footer";
 import { Header } from "../layouts/header";
 import { Slider } from "./slider";
 
 export function Home() {
   function HomeProductList() {
+    
     const popularProducts = products.sort((a, b) => b.popularity - a.popularity).slice(0, 6);
+
+    let navigate = useNavigate(); 
+    function routeChange(product: Product) { 
+    const pathName = product.type + '-' + product.name.replace(' ', '-').toLowerCase() + '-' + product.id;
+    let path = `/products/${pathName}`; 
+    navigate(path);
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 1)
+  }
     const popularProductsList = popularProducts.map(product => (
       <div className="product">
-        <div className="product_img" style={{backgroundImage: `url(${product.image[0]})`}}>
+        <div className="product_img" style={{backgroundImage: `url(${product.image[0]})`}} onClick={() => routeChange(product)}>
          <div className="product_add">
            <p className="pruduct_add_text">ADD TO CART</p>
           </div>

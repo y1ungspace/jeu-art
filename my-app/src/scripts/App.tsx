@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Routes, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { Products } from './products/products';
 import { Home } from './home/home';
 import { NotFound } from './notFound';
 import { ProductPage } from './product';
+import { products } from './abstracts/products-list';
+
+const productsRouter: ReactNode = products.map(product => <Route path={`products/${product.type}-${product.name.trim()}-${product.id}`} element={<ProductPage product={product}/>} />)
+
 
 function App() {
   return (
@@ -12,8 +16,8 @@ function App() {
       <Routes>
           <Route index element={<Home/>} />
           <Route path="/home" element={<Home />} />
-          <Route path="products" element={<Products />} />
-          <Route path="product-1" element={<ProductPage />} />
+          <Route path="/products" element={<Products />} />
+            {productsRouter}
           <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

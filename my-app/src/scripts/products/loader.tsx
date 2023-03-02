@@ -1,4 +1,5 @@
-import { SearchPannelType, Template } from "../abstracts/interfaces";
+import { useNavigate } from "react-router";
+import { Product, SearchPannelType, Template } from "../abstracts/interfaces";
 
 
 export function ProductList(props: SearchPannelType) {
@@ -21,9 +22,17 @@ export function ProductList(props: SearchPannelType) {
 }
 
 function Card(props: Template) {
+
+  let navigate = useNavigate(); 
+  function routeChange(props: Template) { 
+    const pathName = props.name.replace(' ', '-').toLowerCase() + '-' + props.id ;
+    let path = `/products/${pathName}`; 
+    navigate(path);
+    setTimeout(() => window.scrollTo(0, 0), 1)
+}
   return(
     <div className="product-card">
-      <div className="product-card_img" style={{backgroundImage: `url(${props.image![0]})`}}>
+      <div className="product-card_img" style={{backgroundImage: `url(${props.image![0]})`}} onClick={() => routeChange(props)}>
         <div className="product-card_add">
           <p className="pruduct_add_text">ADD TO CART</p>
         </div>

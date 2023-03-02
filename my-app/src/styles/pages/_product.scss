@@ -2,13 +2,14 @@
   display: flex;
   width: 1248px;
   gap: 62px;
-  margin: -18px auto 0px auto;
+  margin: -18px auto 90px auto;
 }
 
 .product_frontbar_images {
   display: flex;
   flex-wrap: wrap;
   width: 700px;
+  height: 626px;
   gap: 24px 39px;
 }
 
@@ -16,10 +17,17 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  height: 600px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 @mixin productOnHover {
-  transition: 1s;
+  transition: 0.5s;
+  object-fit:cover;
   &:hover {
     box-shadow: 4px 4px 23px 4px rgba(0, 0, 0, 0.2);
     .product_add {
@@ -34,7 +42,23 @@
   border-radius: 8px;
   background-color: lightsteelblue;
   cursor: pointer;
-  @include productOnHover()
+  scroll-snap-align: start;
+  animation: frontbarImgOnLoad 1s forwards;
+  @include productOnHover();
+
+  &.selected {
+    filter: opacity(60%);
+  }
+}
+
+@keyframes frontbarImgOnLoad {
+  from {
+    transform: translateY(-300px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
 }
 
 .product_frontbar_img--selected {
@@ -43,14 +67,25 @@
   border-radius: 8px;
   background-color: lightsteelblue;
   cursor: pointer;
-  @include productOnHover()
+  animation: frontbarSelectedImgOnLoad 1s forwards;
+  @include productOnHover();
+}
+
+@keyframes frontbarSelectedImgOnLoad {
+  from {
+    transform: translateY(300px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
 }
 
 .product_frontbar_images_navigator {
   width: 540px;
-  border: 1px solid #D8D8D8;
+  height: 2px;
   margin-left: auto;
-  margin-bottom: 66px;
+  margin-top: auto;
 }
 
 .product_frontbar_description {
@@ -133,4 +168,48 @@
 .similar_items {
   width: 1248px;
   margin: 0 auto;
+}
+
+@mixin productFullmode() {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 200%; 
+  background-color: #707070;
+  z-index: 100;
+}
+
+
+.product_fullmode--on {
+  @include productFullmode();
+  animation: fullModeOpening 0.5s forwards;
+}
+
+.product_fullmode--off {
+  @include productFullmode();
+  animation: fullModeClosing 0.5s forwards;
+}
+
+@keyframes fullModeOpening {
+  from {
+    visibility: hidden;
+    filter: opacity(0%)
+  }
+
+  to {
+    visibility: visible;
+    filter: opacity(60%);
+  }
+}
+@keyframes fullModeClosing{
+  from {
+    visibility: visible;
+    filter: opacity(60%);
+  }
+
+  to {
+    visibility: hidden;
+    filter: opacity(0%)
+  }
 }
