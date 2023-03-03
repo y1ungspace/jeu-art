@@ -629,7 +629,7 @@ import imgWassily from "../../assets/images/wassily.jpg";
       "https://www.dropbox.com/s/ez9sa9la06fc6gg/330980134_1662791940832529_4381199918026516725_n.jpg?raw=1",
       "https://www.dropbox.com/s/6vmpcynxn8hub3c/330232578_170895865666735_9163075144169606804_n.jpg?raw=1",
     ],
-    designer: "Marcel Breurer",
+    designer: "Marcel Breuer",
     type: "armchair",
     popularity: 332,
     isInCart:  false,

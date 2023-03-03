@@ -5,6 +5,7 @@ import { Footer } from "../layouts/footer";
 import { SearchPannelType, Product } from "../abstracts/interfaces";
 import { products } from "../abstracts/products-list";
 import { SearchInput, ShopBy, SortBy, searchQuery } from "./search";
+import { RangeSlider } from "./rangeSlider";
 
 function SearchPannel(props: SearchPannelType) {
   return(
@@ -15,31 +16,7 @@ function SearchPannel(props: SearchPannelType) {
             <ShopBy />
             <SortBy />
           </section>
-          <div className="filter_range">
-            <div className="filter_range_wrapper">
-              <p>Price</p>
-              <div className="container">
-                <div className="slider">
-                  <div className="track"></div>
-                </div>
-                <div className="thumb t0"></div>
-                <div className="thumb t1"></div>
-              </div>
-            </div>
-            <p className="price-range">0€ - 8560€</p>
-
-            <div className="filter_range_wrapper">
-              <p>Year</p>
-              <div className="container1">
-                <div className="slider1">
-                  <div className="track1"></div>
-                </div>
-                <div className="thumb1 t0"></div>
-                <div className="thumb1 t1"></div>
-              </div>
-            </div>
-            <p className="year-range price-range">1950 - 1990</p>
-          </div>
+          <RangeSlider name="Price" />
           <div className="filter_switches">
             <p>Popular only</p>
             <label className="switch">
@@ -71,6 +48,7 @@ export function Products() {
   function targetProducts() {
     const newArr: Product[] = [];
     const categarisedArr: Product[] = [];
+    const arrAfterRangeFilers: Product[] =[];
     products.forEach(product => {
       if (product.name.toLowerCase().includes(searchQuery.search)) { //search filter
         newArr.push(product)
@@ -94,8 +72,15 @@ export function Products() {
           case 'Year: Ascending': categarisedArr.sort((a: Product, b: Product) => a.year - b.year);
             break;
           case 'Year: Descending': categarisedArr.sort((b: Product, a: Product) => a.year - b.year);
-        }
-    return categarisedArr;
+    }
+    // range slider sort
+    categarisedArr.forEach(elem => {
+      if (elem.cost >= searchQuery.range.price.min && elem.cost <= searchQuery.range.price.max) {
+        arrAfterRangeFilers.push(elem);
+      }
+    })
+    
+    return arrAfterRangeFilers;
   }
 
   return(

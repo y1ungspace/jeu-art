@@ -3,6 +3,7 @@ import { products } from "../abstracts/products-list"
 import { useNavigate } from "react-router";
 import { Product } from "../abstracts/interfaces";
 
+
 const mockSliderList = products.slice(-5);
 
 export function Slider() {
