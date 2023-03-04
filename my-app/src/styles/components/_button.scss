@@ -86,3 +86,21 @@
   background-color: #A18A68;
   border-radius: 2px;
 }
+
+.black-button {
+  width: 500px;
+  height: 53px;
+  background: #000000;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 21px; 
+  text-transform: uppercase;
+  transition: 0.5s;
+
+  &:hover, &:active {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    color: #000000;
+  }
+}

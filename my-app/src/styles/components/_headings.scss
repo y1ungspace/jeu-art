@@ -18,6 +18,11 @@
   font-size: 33px;
   color: #FFFFFF;
   line-height: 0px;
+
+  &.black {
+    color: #000000;
+    line-height: 43px;
+  }
 }
 
 @mixin h2 {

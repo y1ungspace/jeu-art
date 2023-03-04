@@ -6,6 +6,7 @@ import { Home } from './home/home';
 import { NotFound } from './notFound';
 import { ProductPage } from './product';
 import { products } from './abstracts/products-list';
+import { ContactPage } from './contact';
 
 const productsRouter: ReactNode = products.map(product => <Route path={`products/${product.type}-${product.name.trim()}-${product.id}`} element={<ProductPage product={product}/>} />)
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/products" element={<Products />} />
             {productsRouter}
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
