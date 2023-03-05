@@ -1,19 +1,9 @@
 import { Template } from "./interfaces"
 
-import img1813 from "../../assets/images/1813.jpg";
-import img4875 from "../../assets/images/4875.jpg";
 import imgB33 from "../../assets/images/b33.jpg";
 import imgCandeleholder from "../../assets/images/candleholder.jpg";
-import imgHammerYellow from "../../assets/images/hammer-yellow.jpg";
-import imgKoror from "../../assets/images/koror.jpg";
-import imgMg5Red from "../../assets/images/mg5-red.jpg";
-import imgMg5White from "../../assets/images/mg5-white.jpg";
-import imgModus from "../../assets/images/modus.jpg";
-import imgPhilippe from "../../assets/images/philippe.jpg";
 import imgPlia from "../../assets/images/plia.jpg";
-import imgTango from "../../assets/images/tango.jpg";
 import imgTogo from "../../assets/images/togo.jpg";
-import imgWassily from "../../assets/images/wassily.jpg";
 
  export class Product implements Template {
     id: number;
@@ -251,7 +241,12 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 350,
     color: "white",
     producer: "KARTELL",
-    image: [img4875],
+    image: [
+      'https://www.dropbox.com/s/robkn191m8141hu/258815506_1052112778872740_6036326712151615412_n.jpg?raw=1',
+      'https://www.dropbox.com/s/vumibspvdqpv1bn/258914255_324905446148305_3864831921794834393_n.jpg?raw=1',
+      'https://www.dropbox.com/s/zi10k9yufef6q9k/259166193_893229954915098_6270757788029160639_n.jpg?raw=1',
+      'https://www.dropbox.com/s/wb39ftxdofaelyc/258881767_406505854499927_8116571554630956812_n.jpg?raw=1',
+    ],
     designer: "Carlo Bartoli",
     type: "chair",
     popularity: 54,
@@ -265,7 +260,12 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 2870,
     color: "black",
     producer: "KNOLL",
-    image: [imgWassily],
+    image: [
+      'https://www.dropbox.com/s/yhscyox0nhby95m/243088639_388000366285092_3615293043160184002_n.jpg?raw=1',
+      'https://www.dropbox.com/s/3zwg192eucjjk5w/242948211_192304313016397_8008123234583604700_n.jpg?raw=1',
+      'https://www.dropbox.com/s/uz17sntxdyio46f/242777316_411404610335513_2679056146636116083_n.jpg?raw=1',
+      'https://www.dropbox.com/s/8qd5kfwbyceazuq/242796948_423161239302153_721112168691873335_n.jpg?raw=1',
+    ],
     designer: "Marcel Breuer",
     type: "armchair",
     popularity: 137,
@@ -279,7 +279,13 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 60,
     color: "green",
     producer: "GILAC",
-    image: [img1813],
+    image: [
+      'https://www.dropbox.com/s/r9k2rpmmdl92f40/228085987_852143359067227_5254667892178443399_n.jpg?raw=1',
+      'https://www.dropbox.com/s/w99lwsnawo155r5/227987572_300670415181794_2041534577389843692_n.jpg?raw=1',
+      'https://www.dropbox.com/s/2o6qlpduadis9a3/229684221_2954588061452150_600005344623048388_n.jpg?raw=1',
+      'https://www.dropbox.com/s/esxl46697g3xv5t/230045384_378064280336551_1275048615651794525_n.jpg?raw=1',
+      'https://www.dropbox.com/s/jftpdy7aes7kxdy/227424275_663086005086529_3004210527802830594_n.jpg?raw=1',
+    ],
     designer: "",
     type: "mirror",
     popularity: 34,
@@ -293,7 +299,14 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 700,
     color: "yellow",
     producer: "FRITZ HANSEN",
-    image: [imgHammerYellow],
+    image: [
+      'https://www.dropbox.com/s/eyfu7fgld441ypf/166152436_739539396734617_2267651340218298136_n.jpg?raw=1',
+      'https://www.dropbox.com/s/8em4y9f4c98k3ay/165674340_495963201412205_4865855939283465812_n.jpg?raw=1',
+      'https://www.dropbox.com/s/v9zxo3yuo6h5ejb/165663131_479866703136464_2438015674006778910_n.jpg?raw=1',
+      'https://www.dropbox.com/s/t7zxfyxtwanp7r0/165676884_2853766164886559_6980881624522252734_n.jpg?raw=1',
+      'https://www.dropbox.com/s/lhq4l6b1ku4cdhp/166796763_198567511716829_5476628466230845137_n.jpg?raw=1',
+      'https://www.dropbox.com/s/pa0d22dxext9m14/165845055_925050398267299_1967334244736256471_n.jpg?raw=1',
+    ],
     designer: "Arne Jacobsen",
     type: "chair",
     popularity: 56,
@@ -307,7 +320,13 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 690,
     color: "black",
     producer: "ARTELUCE",
-    image: [imgTango],
+    image: [
+      'https://www.dropbox.com/s/desnk4tl2g4dcw1/158029008_181736243495130_7997623503868384656_n.jpg?raw=1',
+      'https://www.dropbox.com/s/q763x0ynmmqoga4/158954419_121291886597055_3034989667296129631_n.jpg?raw=1',
+      'https://www.dropbox.com/s/52sebavluvjrsni/157998857_212302700684516_7290023912706750908_n.jpg?raw=1',
+      'https://www.dropbox.com/s/3dqxumhfjgw48eu/158399451_143360424327734_2184649651480724578_n.jpg?raw=1',
+      'https://www.dropbox.com/s/zvulst6solrakct/157858380_884117882159054_3098733786797860260_n.jpg?raw=1',
+    ],
     designer: "Stephen Copeland",
     type: "lamp",
     popularity: 40,
@@ -321,7 +340,14 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 1480,
     color: "white",
     producer: "KNOLL",
-    image: [imgMg5White],
+    image: [
+      'https://www.dropbox.com/s/drnexo8r8gmerlg/152366013_437809627543250_1062059001788000465_n.jpg?raw=1',
+      'https://www.dropbox.com/s/o28wywsy8b3ge17/152111453_449120322943244_8342743372434307448_n.jpg?raw=1',
+      'https://www.dropbox.com/s/j2uafnqzvojw4mt/152417924_2840097322869893_8075190749888030513_n.jpg?raw=1',
+      'https://www.dropbox.com/s/q2oo2ygpm9vt4lz/152305734_1759258134245708_5781275686638298085_n.jpg?raw=1',
+      'https://www.dropbox.com/s/n0u894qmfc4kopi/153235217_4118493524836594_4056198517814917053_n.jpg?raw=1',
+      'https://www.dropbox.com/s/gjd5g0xw1l5462a/153174777_245934087157478_4541753027457715438_n.jpg?raw=1',
+    ],
     designer: "Marcel Breuer",
     type: "armchair",
     popularity: 80,
@@ -363,7 +389,11 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 80,
     color: "blue",
     producer: "HOLMEGAARD",
-    image: [imgKoror],
+    image: [
+      'https://www.dropbox.com/s/ugbx881yv1pk67a/149946546_252374353119645_8774586505442263927_n.jpg?raw=1',
+      'https://www.dropbox.com/s/3mi9djv4fz47l1a/150187952_112909287476444_2203373688661741091_n.jpg?raw=1',
+      'https://www.dropbox.com/s/g6sr5q04exu9os1/150403027_794776877787193_4702905246635325754_n.jpg?raw=1',
+    ],
     designer: "Per Lutken",
     type: "vase",
     popularity: 50,
@@ -391,7 +421,11 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 340,
     color: "black",
     producer: "TECNO",
-    image: [imgModus],
+    image: [
+      'https://www.dropbox.com/s/t6zmbkxc4w7009r/262290829_604334887554463_5970313180761948407_n.jpg?raw=1',
+      'https://www.dropbox.com/s/djcchwv2t1m0r9l/261720657_380135987236453_7524749895725060578_n.jpg?raw=1',
+      'https://www.dropbox.com/s/iazdvs9mipzvqvh/261059316_4297009387077828_5830829627130969670_n.jpg?raw=1',
+    ],
     designer: "OSVALDO BORSANI",
     type: "armchair",
     popularity: 50,
@@ -404,8 +438,14 @@ import imgWassily from "../../assets/images/wassily.jpg";
     year: 1970,
     cost: 1480,
     color: "red",
-    producer: "KNOLL",
-    image: [imgMg5Red],
+    producer: "MATEO GRASSI",
+    image: [
+      'https://www.dropbox.com/s/pzozwo7tzbl59rm/167665532_1639837449559708_8098556987541440740_n.jpg?raw=1',
+      'https://www.dropbox.com/s/lwhzkorx8idzxkp/166805314_125677312866645_816488075542709086_n.jpg?raw=1',
+      'https://www.dropbox.com/s/5ejer5cxet1v19g/166828317_100649845451866_5670114736980340982_n.jpg?raw=1',
+      'https://www.dropbox.com/s/wrd0wuqwo2z8vxh/167412892_500689621103738_3564893978887853669_n.jpg?raw=1',
+      'https://www.dropbox.com/s/i4nz079vr3tp2aq/167535365_546711346305490_8085942740401130640_n.jpg?raw=1',
+    ],
     designer: "Marcel Breuer",
     type: "armchair",
     popularity: 117,
@@ -419,7 +459,12 @@ import imgWassily from "../../assets/images/wassily.jpg";
     cost: 270,
     color: "metal",
     producer: "OXAR",
-    image: [imgPhilippe],
+    image: [
+      'https://www.dropbox.com/s/g2h0lytsw9e9vvs/221394323_168243315253916_7928621549884750401_n.jpg?raw=1',
+      'https://www.dropbox.com/s/1j89fawdpbicubg/221714480_514436116527705_1559559051494760005_n.jpg?raw=1',
+      'https://www.dropbox.com/s/cifgqv202rod1vo/220576662_604796393834680_5487328326432057574_n.jpg?raw=1',
+      'https://www.dropbox.com/s/imibuhch3xs51d7/220190535_2975880829342257_5865529546614603202_n.jpg?raw=1',
+    ],
     designer: "Philippe Rogier",
     type: "lamp",
     popularity: 90,
