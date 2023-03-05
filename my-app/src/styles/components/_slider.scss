@@ -33,6 +33,7 @@
 .home_slider_elem {
   min-width: 1248px;
   min-height: 646px;
+  background-color: #EFEFEF;
   background-position: center;
   @include transitionfix();
 }

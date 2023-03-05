@@ -40,7 +40,7 @@
   width: 120px;
   height: 120px;    
   border-radius: 8px;
-  background-color: lightsteelblue;
+  background-color: #EFEFEF;
   cursor: pointer;
   scroll-snap-align: start;
   animation: frontbarImgOnLoad 1s forwards;
@@ -65,7 +65,7 @@
   width: 540px;
   height: 600px;
   border-radius: 8px;
-  background-color: lightsteelblue;
+  background-color: #EFEFEF;
   cursor: pointer;
   animation: frontbarSelectedImgOnLoad 1s forwards;
   @include productOnHover();
