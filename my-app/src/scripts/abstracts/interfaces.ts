@@ -10,6 +10,7 @@ export interface Template {
   image?: string[];
   designer?: string;
   type?: string;
+  description?: string,
   popularity?: number;
   isInCart?: boolean;
 }
@@ -25,6 +26,7 @@ export type Product = {
   image: string[];
   designer: string;
   type: string;
+  description: string;
   popularity: number;
   isInCart: boolean;
 }

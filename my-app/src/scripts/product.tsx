@@ -131,7 +131,7 @@ export function ProductPage(props: {product: Product}) {
          <h5 className="h5--dark-grey" style={{marginLeft: "14px"}}>1 customer review</h5>
         </div>
         <h5 className="h5--dark-grey" style={{marginBottom: "48px"}}>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. 
+           {props.product.description}
         </h5>
         <div className="product_frontbar_buttons-box">
           <div className="counter-box">
