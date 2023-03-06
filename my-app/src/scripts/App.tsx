@@ -8,7 +8,7 @@ import { ProductPage } from './product';
 import { products } from './abstracts/products-list';
 import { ContactPage } from './contact';
 
-const productsRouter: ReactNode = products.map(product => <Route path={`products/${product.type}-${product.name.trim()}-${product.id}`} element={<ProductPage product={product}/>} />)
+const productsRouter: ReactNode = products.map(product => <Route path={`products/${product.type}-${product.name.replace(' ', '-')} ${product.id}`} element={<ProductPage product={product}/>} />)
 
 
 function App() {

@@ -70,7 +70,7 @@ export function Slider() {
 
     let navigate = useNavigate(); 
     function routeChange(product: Product) { 
-    const pathName = product.type + '-' + product.name.replace(' ', '-').toLowerCase() + '-' + product.id;
+    const pathName = product.type + '-' + product.name.replace(' ', '-').toLowerCase() + ' ' + product.id;
     let path = `/products/${pathName}`; 
     navigate(path);
     setTimeout(() => window.scrollTo(0, 0), 1)

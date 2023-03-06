@@ -872,7 +872,7 @@ import imgTogo from "../../assets/images/togo.jpg";
     ],
     designer: "Pierre Guariche",
     type: "chair",
-    description: "Mid-century Modern Pegase beechwood dining chairs by Pierre Guariche for Baumann, circa 1965. Rare original set of 6 chairs designed by Pierre Guariche for Maison Baumann, circa 1965. A beautiful, elegant and comfortable chairs, in beechwood and leatherette.'",
+    description: "Mid-century Modern Pegase beechwood dining chairs by Pierre Guariche for Baumann, circa 1965. Rare original set of 6 chairs designed by Pierre Guariche for Maison Baumann, circa 1965. A beautiful, elegant and comfortable chairs, in beechwood and leatherette.",
     popularity: 15,
     isInCart:  false,
   },

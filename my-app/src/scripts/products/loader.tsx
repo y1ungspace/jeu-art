@@ -25,7 +25,8 @@ function Card(props: Template) {
 
   let navigate = useNavigate(); 
   function routeChange(props: Template) { 
-    const pathName = props.name.replace(' ', '-').toLowerCase() + '-' + props.id ;
+    console.log(props.name.replace(' ', '-'))
+    const pathName = props.name.replace(/ /g, '-').toLowerCase() + ' ' + props.id ;
     let path = `/products/${pathName}`; 
     navigate(path);
     setTimeout(() => window.scrollTo(0, 0), 1)
