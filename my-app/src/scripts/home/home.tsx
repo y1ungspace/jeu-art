@@ -11,7 +11,7 @@ export function Home() {
 
     let navigate = useNavigate(); 
     function routeChange(product: Product) { 
-    const pathName = product.type + '-' + product.name.replace(' ', '-').toLowerCase() + '-' + product.id;
+    const pathName = product.type + '-' + product.name.replace(' ', '-').toLowerCase() + ' ' + product.id;
     let path = `/products/${pathName}`; 
     navigate(path);
     setTimeout(() => {

@@ -8,14 +8,14 @@ import { ProductPage } from './product';
 import { products } from './abstracts/products-list';
 import { ContactPage } from './contact';
 
-const productsRouter: ReactNode = products.map(product => <Route path={`products/${product.type}-${product.name.replace(' ', '-')} ${product.id}`} element={<ProductPage product={product}/>} />)
+const productsRouter: ReactNode = products.map(product => <Route path={`/products/${product.type}-${product.name.replace(' ', '-')} ${product.id}`} element={<ProductPage product={product}/>} />)
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-          <Route index element={<Home/>} />
+          <Route path="/jeu-art" element={<Home/>} />
           <Route path="/home" element={<Home />} />
           <Route path="/products" element={<Products />} />
             {productsRouter}
